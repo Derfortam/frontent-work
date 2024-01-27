@@ -1,0 +1,9 @@
+.footer {
+  font-size: 1.125rem;
+}
+.footer__body {
+  border: 0.0625rem solid #1c1c21;
+}
+.footer__titling {
+  padding: 200px;
+}

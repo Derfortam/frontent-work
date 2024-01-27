@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'icon';
+  src:  url('fonts/icon.eot?8e7mp1');
+  src:  url('fonts/icon.eot?8e7mp1#iefix') format('embedded-opentype'),
+    url('fonts/icon.ttf?8e7mp1') format('truetype'),
+    url('fonts/icon.woff?8e7mp1') format('woff'),
+    url('fonts/icon.svg?8e7mp1#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_i-"], [class*=" _i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._i-arrow45:before {
+  content: "\e900";
+}
+._i-facebook:before {
+  content: "\e901";
+}
+._i-linkedin:before {
+  content: "\e902";
+}
+._i-shapeStar:before {
+  content: "\e903";
+}
+._i-slideDown:before {
+  content: "\e904";
+}
+._i-slideLeft:before {
+  content: "\e905";
+}
+._i-slideRight:before {
+  content: "\e906";
+}
+._i-slideUp:before {
+  content: "\e907";
+}
+._i-star:before {
+  content: "\e908";
+}
+._i-star4:before {
+  content: "\e909";
+}
+._i-twitter:before {
+  content: "\e90a";
+}
+._i-vectorA:before {
+  content: "\e90b";
+}
+._i-vectorD:before {
+  content: "\e90c";
+}
+._i-vectorE:before {
+  content: "\e90d";
+}
+._i-vectorI:before {
+  content: "\e90e";
+}
+._i-vectorM:before {
+  content: "\e90f";
+}
+._i-vectorN:before {
+  content: "\e910";
+}
