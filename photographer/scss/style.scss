@@ -70,6 +70,116 @@ body{
 @import "_header.scss";
 // ===========================================================================
 //! багатоповторювані елементи
+
+.photowork {
+    font-size: toRem(18);
+    @include adaptiveValue("font-size", 18, 14);
+    // .photowork__container
+
+    &__container {
+       
+        @media(max-width: toEm(768)){
+            overflow: hidden;
+        }
+        @media(max-width: toEm(387)){
+            overflow: hidden;
+        }
+    }
+
+    &__box{
+        overflow: hidden;
+    }
+    // .photowork__wrapper
+
+    &__wrapper {
+    }
+
+    // .photowork__slide
+
+    &__slide {
+    }
+
+    // .photowork__content
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: toRem(19);
+    }
+
+    // .photowork__image
+
+    &__image {
+        overflow: hidden;
+        border-radius: toRem(20);
+        @media(hover:hover){
+            &:hover{
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        img{
+            transition: transform 0.3s;
+            aspect-ratio: 406 / 428;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    // .photowork__info
+
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: toEm(10, 18);
+        row-gap: toRem(4);
+    }
+
+    // .photowork__name
+
+    &__name {
+        color: #CACACE;
+        font-weight: 500;
+    }
+
+    // .photowork__link
+
+    &__link {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: toRem(6);
+        align-items: center;
+        justify-self: end;
+        align-self: start;
+        color: #F2F2F3;
+        font-size: toEm(18, 18);
+        padding-bottom: toEm(5, 18);
+        border-bottom: toRem(1) solid $easyGrey;
+        transition: color 0.3s;
+        @media(hover:hover){
+            &:hover{
+                color: #797C86;
+            }
+        }
+    }
+
+    // .photowork__date
+
+    &__date {
+        color: #797C86;
+        font-size: toEm(16, 18);
+        font-weight: 400;
+    }
+}
+.swiper-container {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
+// ===========================================================================
 .arrow-button {
     //font-size: toRem(20);
     max-width: toEm(104, 20);
@@ -330,216 +440,6 @@ body{
     }
 }
 // ===========================================================================
-.galery-wrap {
-    font-size: toRem(20);
-    @include adaptiveValue("font-size", 20, 14);
-    display: flex;
-
-    // .galery-wrap__galery
-
-    &__galery {
-        //max-width: toRem(500);
-        // display: grid;
-        // grid-template-columns: repeat(3, 1fr);
-        // grid-auto-flow: column;
-        // gap: toRem(50);
-        display: flex;
-        width: toRem(1627);
-        @include adaptiveValue("width", 1627, 300);
-        gap: toRem(50);
-        align-items: center;
-        @include adaptiveValue("gap", 50, 20);
-        overflow: hidden;
-         overflow-x: auto;
-         scrollbar-width: thin;
-        padding: 0 toRem(10);
-      
-            // display: grid;
-            // grid-template-columns: repeat(3, 1fr);
-            // gap: toRem(50);
-        flex: none;
-        width: 100%;
-    }
-      
-    // .galery-wrap__item
-
-    &__item {
-        width: 100%;
-        flex: 0 0 toRem(500);
-        @include adaptiveValue("flex-basis", 500, 270);
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: toRem(19);
-       
-    }
-    
-    &__link-img{
-        overflow: hidden;
-        border-radius: toRem(20);
-        @media(hover:hover){
-            &:hover{
-                .galery-wrap__img{
-                    transform: scale(1.2);
-                }
-            }
-        }
-    }
-
-    // .galery-wrap__img
-
-    &__img {
-        aspect-ratio: 500 / 520;
-        object-fit: cover;
-        width: 100%;
-        border-radius: toRem(20);
-        transition: transform 0.3s;
-    }
-
-    // .galery-wrap__content
-
-    &__content {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        row-gap: toRem(5);
-        column-gap: toEm(10, 20);
-    }
-
-    // .galery-wrap__title
-
-    &__title {
-        color: #CACACE;
-        font-weight: 500;
-    }
-
-    // .galery-wrap__link
-
-    &__link {
-        justify-self: end;
-        color: #F2F2F3;
-        max-width: toRem(143);
-        font-size: toEm(18, 20);
-        font-weight: 500;
-        position: relative;
-        display: flex;
-        gap: toRem(10);
-        align-items: center;
-        flex-direction: row-reverse;
-        transition: all 0.3s;
-        @media(hover:hover){
-            &:hover{
-                color: #858585;
-            }
-        }
-        &::before{
-            font-size: toEm(18, 20);
-        }
-        &::after{
-            content: '';
-            position: absolute;
-            top: 100%;
-            margin-top: toRem(5);
-            left: 0;
-            width: 100%;
-            height: toRem(2);
-            background-color: $grice;
-        }
-    }
-
-    // .galery-wrap__date
-
-    &__date {
-        color: #797C86;
-        font-size: toEm(18, 20);
-        font-weight: 400;
-    }
-}
-/* Для всіх пристроїв */
-.galery-wrap__galery {
-    overflow-x: auto; /* Дозволяємо горизонтальну прокрутку */
-    -webkit-overflow-scrolling: touch; /* Забезпечує плавність прокрутки на iOS */
-    scrollbar-width: none; /* Firefox: приховуємо лінію прокрутки */
-    -ms-overflow-style: none; /* IE/Edge: приховуємо лінію прокрутки */
-}
-/* Визначаємо стилі для WebKit (Chrome, Safari) */
-.galery-wrap__galery::-webkit-scrollbar {
-    display: none; /* Приховуємо лінію прокрутки в WebKit */
-}
-// ===========================================================================
-.advertising {
-    width: 100%; 
-    padding: toRem(20) 0;
-    background-color: #0E0E10;
-    border-top: toRem(1) solid #1C1C21;
-  //  flex: none;
-    // display: flex;
-    // align-items: center;
-    // gap: toRem(20);
-    overflow: hidden;
-   
-    //.advertising__field
-
-    &__field{
-        display: flex;
-        align-items: center;
-        gap: toRem(20);
-        @media(max-width: toEm(700)){
-            overflow: auto;
-        }
-    }
-
-    // .advertising__box
-    
-    &__box{
-        width: 100%;
-        position: relative;
-        // position: absolute;
-        // top: 50%;
-        // transform: translateY(-50%);
-        left: 100%;
-        display: flex;
-        width: 100%;
-        gap: toRem(20);
-        align-items: center;
-        animation: marquee 14s linear infinite alternate;
-        @media(max-width: toEm(700)){
-            animation-play-state: paused;
-            left: 0;
-        }
-        &--delay{
-            //animation: marquee 4s linear infinite 2s ;
-        }
-    }
-   
-    // .advertising__item
-
-    &__item {
-        //animation: marquee 10s linear infinite;
-        font-size: toRem(18);
-        font-family: $mainFont;
-        font-weight: 400;
-        line-height: 1.2;
-        span{
-            white-space: nowrap;
-        }
-        display: flex;
-        gap: toRem(5);
-        align-items: center;
-        ::before{
-            font-size: toRem(18);
-            color: #aea1f7;
-        }
-    }
-}
-@keyframes marquee {
-    0% {
-        left: 100%;
-    }
-    100% {
-       left: -100%;
-    }
-}
-
-// ===========================================================================
 .social-media {
     font-size: toRem(18);
     border: toRem(0.1) solid $grice;
@@ -574,89 +474,6 @@ body{
 
     }
 }
-// ===========================================================================
-// .comment {
-//     font-size: toRem(20);
-//     @include adaptiveValue("font-size", 20, 16);
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     gap: toRem(30);
-
-//     // .comment__block
-
-//     &__block {
-//         background-color: $blackGrey;
-//         padding: toRem(40);
-//         color: $textWhite;
-//         display: inline-grid;
-//         grid-template-columns: repeat(1, 1fr);
-//         row-gap: toRem(30);
-//         border: toRem(0.1) solid $greyGradient;
-//        // max-width: toEm(512, 20);
-//     }
-
-//     // .comment__titling
-
-//     &__titling {
-//         display: inline-grid;
-//         grid-template-columns: repeat(2, 1fr);
-//         row-gap: toEm(35, 20);
-//         column-gap: toEm(25, 20);
-//     }
-
-//     &__name-area{
-//         display: grid;
-//         grid-template-columns: repeat(1, 1fr);
-//         gap: toRem(4);
-//     }
-
-//     // .comment__name
-
-//     &__name {
-//         font-weight: 500;
-//         line-height: 1.2;
-//     }
-
-//     &__location{
-//         color: #62646C;
-//         font-size: toEm(18, 20);
-//         font-weight: 400;
-//         line-height: 1.1;
-//     }
-//     // .comment__stars
-
-//     &__stars {
-//         display: inline-grid;
-//         grid-template-columns: repeat(5, 1fr);
-//         gap: toRem(5);
-//     }
-
-//     // .comment__icon
-
-//     &__icon {
-//         &::before{
-//             color: $gold;
-//         }
-//     }
-
-//     // .comment__text
-
-//     &__text {
-//         display: grid;
-//         grid-template-columns: repeat(1, 1fr);
-//         gap: toRem(5);
-//     }
-
-//     // .comment__decor-up
-
-//     &__decor-up {
-//     }
-
-//     // .comment__decor-down
-
-//     &__decor-down {
-//     }
-// }
 // ===========================================================================
 .wrapper-carousel {
     margin: 0 auto;
@@ -827,35 +644,28 @@ body{
     @include adaptiveValue("font-size", 20, 16);
     width: 100%;
     position: relative;
-    // .comment__list
-
-    &__list {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: calc((100% / 3) - toRem(20));
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: toRem(20);
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-        @media(max-width: toEm(1120)){
-            grid-auto-columns: calc((100% / 2) - toRem(10));
-        }
-        @media(max-width: toEm(720)){
-            grid-auto-columns: 100%;
-        }
     
-        &::-webkit-scrollbar {
-            display: none;
-          }
-      
-          &.no-transition {
-            scroll-behavior: auto;
-          }
-      
-        
-      
-    }
+		// .comment__container
+
+		&__container {
+		}
+
+		// .comment__box
+
+		&__box {
+            overflow: hidden;
+		}
+
+		// .comment__wrapper
+
+		&__wrapper {
+		}
+
+		// .comment__slide
+
+		&__slide {
+		}
+
 
     // .comment__block
 
@@ -1017,8 +827,6 @@ body{
             }
         }
 }
-
-
 // ===========================================================================
 
 %button{
@@ -1464,26 +1272,47 @@ body{
     }
     
 
+    
+            // .services__box
+    
+            &__box {
+                overflow: hidden;
+            }
+    
+            // .services__wrapper
+    
+            &__wrapper {
+                
+            }
+    
+            // .services__slide
+    
+            &__slide {
+            }
+    
+
+
+    
     // .services__slide
 
     &__slide{
-        display: flex;
-        align-items: flex-start;
-        gap: toRem(20);
-        flex: none;
-        overflow: hidden;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        display: flex;
-        transition: scroll-snap-align 0.3s ease-in-out;
-        overflow-x: auto; /* Дозволяємо горизонтальну прокрутку */
-        -webkit-overflow-scrolling: touch; /* Забезпечує плавність прокрутки на iOS */
-        scrollbar-width: none; /* Firefox: приховуємо лінію прокрутки */
-        -ms-overflow-style: none; /* IE/Edge: приховуємо лінію прокрутки */
-        &::-webkit-scrollbar {
-            display: none; /* Приховуємо лінію прокрутки в WebKit */
-        }
+        // display: flex;
+        // align-items: flex-start;
+        // gap: toRem(20);
+        // flex: none;
+        // overflow: hidden;
+        // overflow-x: scroll;
+        // scroll-snap-type: x mandatory;
+        // scroll-behavior: smooth;
+        // display: flex;
+        // transition: scroll-snap-align 0.3s ease-in-out;
+        // overflow-x: auto; /* Дозволяємо горизонтальну прокрутку */
+        // -webkit-overflow-scrolling: touch; /* Забезпечує плавність прокрутки на iOS */
+        // scrollbar-width: none; /* Firefox: приховуємо лінію прокрутки */
+        // -ms-overflow-style: none; /* IE/Edge: приховуємо лінію прокрутки */
+        // &::-webkit-scrollbar {
+        //     display: none; /* Приховуємо лінію прокрутки в WebKit */
+        // }
     }
 
 
@@ -1621,7 +1450,7 @@ body{
     
 }
 .portfolio {
-
+    
     &--margin{
         @include adaptiveValue(" margin-bottom", 200, 80);
     }
@@ -1654,7 +1483,7 @@ body{
 
 }
 .ask {
-    @include adaptiveValue("font-size", 20, 12);
+    @include adaptiveValue("font-size", 20, 14);
 
     &--margin{
         @include adaptiveValue(" margin-bottom", 200, 80);
@@ -1779,7 +1608,7 @@ body{
     &__container {
         .titling {
             flex-wrap: wrap;
-            
+            @include adaptiveValue(" margin-bottom", 60, 20);
            // .titling__slider
 
             &__slider {

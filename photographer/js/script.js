@@ -1,4 +1,177 @@
-"use strict"
+// "use strict"
+
+// swipper
+// new Swiper('.swiper-container', {
+
+// стрілки виводяться через before, after ті, що за замовченням в html
+// можна вказувати будь які стрілки
+
+//     navigation: {
+//         nextEl: '#next',
+//         prevEl: '#back'
+//     },
+//     grabCursor: true,
+//     keyboard: {
+//         enabled: true,
+//         onlyInVieport: true,
+//         pageDown: true,
+//     },
+//     mousewheel: {
+//         sensitivity: 1,
+//         eventsTarget: ".swiper-container"
+//     },
+//     slidesPerView: 'auto',
+//     watchOverFlow: true,
+//     spaceBetween: 30,
+//     // slidesPerGroup: 3,
+//     centeredSlides: true,
+//     initialSlide: 3,
+
+// є різні ефекти  fade flip cube coverFlow
+// effect: "coverflow",
+// coverFlowEffect: {
+//     rotate: 20,
+//     stretch: 50,
+//     slideShadows: true,
+// },
+//     breakpoints: {
+//         320: {
+//             slidesPerView: 1,
+//         },
+//         890: {
+//             slidesPerView: 2,
+//         },
+//         1020: {
+//             slidesPerView: 3,
+//         }
+//     }
+// })
+
+
+// якщо свайпер знаходиться всередині флекс-елемента, то для цього елемента
+// вказати min-width: 0;
+
+// -------------------------------------------------------------------------
+
+new Swiper('.photowork__box', {
+    // стрілки виводяться через before, after ті, що за замовченням в html
+    // можна вказувати будь які стрілки
+
+    navigation: {
+        nextEl: '#nextPortfolio',
+        prevEl: '#backPortfolio'
+    },
+    grabCursor: true,
+    keyboard: {
+        enabled: true,
+        onlyInVieport: true,
+        pageDown: true,
+    },
+    mousewheel: {
+        sensitivity: 1,
+        eventsTarget: ".portfolio__container"
+    },
+    slidesPerView: '3',
+    watchOverFlow: true,
+    spaceBetween: 30,
+    //slidesPerGroup: 3,
+    centeredSlides: true,
+    initialSlide: 3,
+
+    // є різні ефекти  fade flip cube coverFlow
+    // effect: "coverflow",
+    // coverFlowEffect: {
+    //     rotate: 20,
+    //     stretch: 50,
+    //     slideShadows: true,
+    // },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        670: {
+            slidesPerView: 2,
+        },
+        1020: {
+            slidesPerView: 3,
+        }
+    }
+})
+
+
+
+
+new Swiper('.services__box', {
+    navigation: {
+        nextEl: '#nextServices',
+        prevEl: '#backServices'
+    },
+    grabCursor: true,
+    keyboard: {
+        enabled: true,
+        onlyInVieport: true,
+        pageDown: true,
+    },
+    mousewheel: {
+        sensitivity: 1,
+        eventsTarget: ".services__container"
+    },
+    slidesPerView: '1',
+    watchOverFlow: true,
+    spaceBetween: 30,
+
+    centeredSlides: true,
+    initialSlide: 3,
+})
+
+
+
+
+new Swiper('.comment__box', {
+    // стрілки виводяться через before, after ті, що за замовченням в html
+    // можна вказувати будь які стрілки
+
+    navigation: {
+        nextEl: '#nextComment',
+        prevEl: '#backComment'
+    },
+    grabCursor: true,
+    keyboard: {
+        enabled: true,
+        onlyInVieport: true,
+        pageDown: true,
+    },
+    mousewheel: {
+        sensitivity: 1,
+        eventsTarget: ".clients__container"
+    },
+    slidesPerView: '3',
+    watchOverFlow: true,
+    spaceBetween: 30,
+    //slidesPerGroup: 3,
+    centeredSlides: true,
+    initialSlide: 3,
+
+    // є різні ефекти  fade flip cube coverFlow
+    effect: "coverflow",
+    coverFlowEffect: {
+        rotate: 20,
+        stretch: 50,
+        slideShadows: true,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        670: {
+            slidesPerView: 2,
+        },
+        1020: {
+            slidesPerView: 3,
+        }
+    }
+})
+// ------------------------------------------------------------------------
 
 
 function changeSliderPlace(element, width, oldPlace, newPlace, oldPosition, newPosition) {
@@ -11,8 +184,7 @@ function changeSliderPlace(element, width, oldPlace, newPlace, oldPosition, newP
     }
 }
 
-
-
+Z
 
 const navigationBlock = document.querySelector('.header__navigation')
 const navigationButton = document.querySelector('.header__button')
@@ -61,127 +233,6 @@ window.addEventListener('resize', changeSliderPlace(clientsSlider, 797, clientsO
 // -------------------------------------------------------------------------------------
 
 
-// ! тут є проблема
-
-
-const ServicesWrapper = document.querySelector(".services__container")
-const ServicesCarousel = document.querySelector(".services__slide")
-const ServicesFirstCardWidth = ServicesWrapper.querySelector(".services__information").offsetWidth
-
-const styles = window.getComputedStyle(ServicesCarousel)
-const ServicesGap = parseFloat(styles.gap)
-
-console.log(ServicesGap)
-
-const ServicesCarouselChildrens = [...ServicesCarousel.children]
-let ServicesIsDragging = false,
-    ServicesIsAutoPlay = true,
-    ServicesStartX,
-    ServicesStartScrollLeft,
-    ServicesTimeoutId
-
-let isTransitioning = false
-
-// Враховуємо gap при розрахунку ServicesCardPerView
-let ServicesCardPerView = Math.floor((ServicesCarousel.offsetWidth + ServicesGap) / (ServicesFirstCardWidth + ServicesGap))
-
-ServicesCarouselChildrens.slice(-ServicesCardPerView).reverse().forEach(card => {
-    ServicesCarousel.insertAdjacentHTML("afterbegin", card.outerHTML)
-})
-
-ServicesCarouselChildrens.slice(0, ServicesCardPerView).forEach(card => {
-    ServicesCarousel.insertAdjacentHTML("beforeend", card.outerHTML)
-})
-
-ServicesCarousel.addEventListener("touchstart", startDragging)
-ServicesCarousel.addEventListener("touchend", stopDragging)
-ServicesCarousel.addEventListener("touchmove", handleDragging)
-
-function startDragging(e) {
-    ServicesIsDragging = true
-    ServicesStartX = e.touches[0].clientX
-    ServicesStartScrollLeft = ServicesCarousel.scrollLeft
-    isTransitioning = true
-    ServicesCarousel.style.transition = "none"
-}
-
-function stopDragging() {
-    ServicesIsDragging = false
-
-    // Визначте, на яку картку перетягнули і встановіть плавну прокрутку
-    const draggedCardIndex = Math.round(ServicesCarousel.scrollLeft / (ServicesFirstCardWidth + ServicesGap))
-    const targetScrollLeft = draggedCardIndex * (ServicesFirstCardWidth + ServicesGap)
-
-    ServicesCarousel.style.transition = "scroll-snap-align 0.3s ease-in-out"
-    ServicesCarousel.scrollLeft = targetScrollLeft;
-
-    // Зачекайте завершення транзакції перед знову дозволяти транзакції
-    setTimeout(() => {
-        isTransitioning = false;
-    }, 300)
-}
-
-function handleDragging(e) {
-    if (!ServicesIsDragging) return;
-    const offsetX = e.touches[0].clientX - ServicesStartX;
-    ServicesCarousel.scrollLeft = ServicesStartScrollLeft - offsetX;
-}
-
-ServicesCarousel.addEventListener("scroll", () => {
-    if (!isTransitioning) {
-        ServicesCarousel.style.transition = "scroll-snap-align 0.3s ease-in-out"
-    }
-})
-
-
-// ------------------------------------------------------------------------
-
-const wrapper = document.querySelector(".wrapper-carousel")
-const carousel = document.querySelector(".wrapper-carousel__carousel")
-const firstCardWidth = carousel.querySelector(".wrapper-carousel__card").offsetWidth
-// const arrowBtns = document.querySelectorAll(".wrapper i");
-const carouselChildrens = [...carousel.children]
-let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId
-// Get the number of cards that can fit in the carousel at once
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth)
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
-carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML)
-});
-// Insert copies of the first few cards to end of carousel for infinite scrolling
-carouselChildrens.slice(0, cardPerView).forEach(card => {
-    carousel.insertAdjacentHTML("beforeend", card.outerHTML)
-})
-
-// --------------------------------------------------------------------------------
-
-const commentWrapper = document.querySelector(".comment")
-const commentCarousel = document.querySelector(".comment__list")
-const commentFirstCardWidth = commentCarousel.querySelector(".comment__block").offsetWidth
-// const arrowBtns = document.querySelectorAll(".wrapper i");
-const commentCarouselChildrens = [...commentCarousel.children]
-let commentIsDragging = false, commentIsAutoPlay = true, commentStartX, commentStartScrollLeft, commentTimeoutId
-// Get the number of cards that can fit in the carousel at once
-let commentCardPerView = Math.round(commentCarousel.offsetWidth / commentFirstCardWidth)
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
-commentCarouselChildrens.slice(-commentCardPerView).reverse().forEach(card => {
-    commentCarousel.insertAdjacentHTML("afterbegin", card.outerHTML)
-});
-// Insert copies of the first few cards to end of carousel for infinite scrolling
-commentCarouselChildrens.slice(0, commentCardPerView).forEach(card => {
-    commentCarousel.insertAdjacentHTML("beforeend", card.outerHTML)
-})
-
-// ---------------------------------------------------------------------------------
-
-// відкриваємо та приховуємо спойлери
-
-// const quetion = document.querySelectorAll('.ask__content')
-// const askItem = document.querySelectorAll('.ask__item')
-// const askAnswer = document.querySelectorAll('.ask__answer')
-// console.log(quetion)
-// console.log(askItem)
-
 
 
 
@@ -197,39 +248,6 @@ function documentActions(e) {
     if (targetElement.closest('.header__burger')) {
 
         document.body.classList.toggle('menu-open')
-    }
-    else if (targetElement.closest('#back')) {
-
-        scrollContainer.scrollLeft -= 1627
-        scrollContainer.style.scrollBehavior = "smooth"
-
-    }
-    else if (targetElement.closest('#next')) {
-
-        scrollContainer.scrollLeft += 1627
-        scrollContainer.style.scrollBehavior = "smooth"
-
-    }
-    else if (targetElement.closest('#nextPortfolio')) {
-
-        const currentScrollLeft = carousel.scrollLeft
-        // Змістити вправо на ширину одного елемента .card
-
-        carousel.scrollLeft = currentScrollLeft + carousel.querySelector(".wrapper-carousel__card").offsetWidth
-    }
-    else if (targetElement.closest('#backPortfolio')) {
-
-        const currentScrollLeft = carousel.scrollLeft
-        carousel.scrollLeft = currentScrollLeft - carousel.querySelector(".wrapper-carousel__card").offsetWidth
-    }
-    else if (targetElement.closest('#nextServices')) {
-
-        const currentScrollLeft = ServicesCarousel.scrollLeft;
-        ServicesCarousel.scrollLeft = currentScrollLeft + (ServicesFirstCardWidth + ServicesGap);
-    }
-    else if (targetElement.closest('#backServices')) {
-        const currentScrollLeft = ServicesCarousel.scrollLeft;
-        ServicesCarousel.scrollLeft = currentScrollLeft - (ServicesFirstCardWidth + ServicesGap);
     }
     else if (targetElement.closest('.ask__item')) {
         // Знаходимо батьківський елемент .ask__item, який є ближчим до елемента, на який клікнули
@@ -262,35 +280,11 @@ function documentActions(e) {
             }
         }
     }
-    else if (targetElement.closest('#nextComment')) {
-        const currentScrollLeft = commentCarousel.scrollLeft
-        // Змістити вправо на ширину одного елемента .card
-        commentCarousel.scrollLeft = currentScrollLeft + commentCarousel.querySelector(".comment__block").offsetWidth
-    }
-    else if (targetElement.closest('#backComment')) {
-        const currentScrollLeft = commentCarousel.scrollLeft
-        // Змістити вправо на ширину одного елемента .card
-        commentCarousel.scrollLeft = currentScrollLeft - commentCarousel.querySelector(".comment__block").offsetWidth
-    }
 }
 
 
 
-
-// const scrollContainer = document.querySelector('.galery-wrap__galery')
-// const backBtn = document.getElementById('back')
-// const nextBtn = document.getElementById('next')
-
-// scrollContainer.addEventListener("wheel", (event) => {
-//     event.preventDefault()
-//     scrollContainer.scrollLeft += event.deltaY
-// })
-
-
-
-
-
-
+// -----------------------------------------------------------------------
 
 
 const animationLine = document.querySelectorAll('.animation-line')
