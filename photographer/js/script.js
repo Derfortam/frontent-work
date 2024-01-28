@@ -1,4 +1,4 @@
-// "use strict"
+"use strict"
 
 // swipper
 // new Swiper('.swiper-container', {
@@ -184,7 +184,7 @@ function changeSliderPlace(element, width, oldPlace, newPlace, oldPosition, newP
     }
 }
 
-Z
+
 
 const navigationBlock = document.querySelector('.header__navigation')
 const navigationButton = document.querySelector('.header__button')
