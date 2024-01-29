@@ -271,6 +271,10 @@ function redirectAbout(event) {
     event.preventDefault()
     window.location.href = "about.html"
 }
+function redirectServices(event) {
+    event.preventDefault()
+    window.location.href = "services.html"
+}
 // -----------------------------------------------------------------------
 
 

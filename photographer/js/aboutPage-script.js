@@ -7,6 +7,15 @@ function redirectAbout(event) {
     event.preventDefault()
     window.location.href = "about.html"
 }
+
+function redirectPortfolio(event) {
+    event.preventDefault()
+    window.location.href = "portfolio.html"
+}
+function redirectServices(event) {
+    event.preventDefault()
+    window.location.href = "services.html"
+}
 // -----------------------------------------------------------------------
 
 function changeSliderPlace(element, width, oldPlace, newPlace, oldPosition, newPosition) {

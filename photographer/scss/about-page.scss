@@ -450,8 +450,8 @@ body{
     &__decor-down{
         left: -40%;
         top: 10%;
-        @include adaptiveValue("top", 50, 100);
-        @include adaptiveValue("left", -150, -250);
+        @include adaptiveValue("top", 150, 100);
+        @include adaptiveValue("left", -250, -200);
     }
 
     // .journey__decor-up
