@@ -54,9 +54,6 @@
 // -------------------------------------------------------------------------
 
 new Swiper('.photowork__box', {
-    // стрілки виводяться через before, after ті, що за замовченням в html
-    // можна вказувати будь які стрілки
-
     navigation: {
         nextEl: '#nextPortfolio',
         prevEl: '#backPortfolio'
@@ -74,17 +71,9 @@ new Swiper('.photowork__box', {
     slidesPerView: '3',
     watchOverFlow: true,
     spaceBetween: 30,
-    //slidesPerGroup: 3,
     centeredSlides: true,
     initialSlide: 3,
 
-    // є різні ефекти  fade flip cube coverFlow
-    // effect: "coverflow",
-    // coverFlowEffect: {
-    //     rotate: 20,
-    //     stretch: 50,
-    //     slideShadows: true,
-    // },
     breakpoints: {
         320: {
             slidesPerView: 1,
@@ -211,17 +200,18 @@ const servicesSliderIcon = document.querySelector('.titling__slider')
 const servicesSliderPlace = document.querySelector('.titling__slider-area')
 const servicesSliderNewPlace = document.querySelector('.services__container')
 
-window.addEventListener('load', changeSliderPlace(servicesSliderIcon, 1086, servicesSliderPlace, servicesSliderNewPlace, "afterbegin", "beforeend"))
-window.addEventListener('resize', changeSliderPlace(servicesSliderIcon, 1086, servicesSliderPlace, servicesSliderNewPlace, "afterbegin", "beforeend"))
-
+if (servicesSliderIcon) {
+    window.addEventListener('load', changeSliderPlace(servicesSliderIcon, 1086, servicesSliderPlace, servicesSliderNewPlace, "afterbegin", "beforeend"))
+    window.addEventListener('resize', changeSliderPlace(servicesSliderIcon, 1086, servicesSliderPlace, servicesSliderNewPlace, "afterbegin", "beforeend"))
+}
 
 const portfolioSlider = document.querySelector('#portfolioSlider')
 const portfolioNewPlace = document.querySelector('.portfolio__container')
 const portfolioOldPlace = document.querySelector('#portfolioSliderOldPlace')
-
-window.addEventListener('load', changeSliderPlace(portfolioSlider, 1086, portfolioOldPlace, portfolioNewPlace, "afterbegin", "beforeend"))
-window.addEventListener('resize', changeSliderPlace(portfolioSlider, 1086, portfolioOldPlace, portfolioNewPlace, "afterbegin", "beforeend"))
-
+if (portfolioSlider) {
+    window.addEventListener('load', changeSliderPlace(portfolioSlider, 1086, portfolioOldPlace, portfolioNewPlace, "afterbegin", "beforeend"))
+    window.addEventListener('resize', changeSliderPlace(portfolioSlider, 1086, portfolioOldPlace, portfolioNewPlace, "afterbegin", "beforeend"))
+}
 
 
 const clientsSlider = document.querySelector('#clientsSlider')
@@ -250,26 +240,15 @@ function documentActions(e) {
         document.body.classList.toggle('menu-open')
     }
     else if (targetElement.closest('.ask__item')) {
-        // Знаходимо батьківський елемент .ask__item, який є ближчим до елемента, на який клікнули
         const parentAskItem = targetElement.closest('.ask__item');
         if (parentAskItem) {
-            // Додаємо або видаляємо клас 'open' тільки для знайденого батьківського елемента
-            parentAskItem.classList.toggle('answer-open');
-
+            parentAskItem.classList.toggle('answer-open')
             // Знаходимо елемент відповіді в межах батьківського елемента
-            const askAnswer = parentAskItem.querySelector('.ask__answer');
-            // setInterval(() => {
-            //     askAnswer.style.opacity = 1
-            // }, 2000)
+            const askAnswer = parentAskItem.querySelector('.ask__answer')
 
-            // askAnswer.style.opacity = 0
-            // askAnswer.style.opacity = 1
-            // // Показати або сховати елемент відповіді для обраного питання
             if (askAnswer) {
                 askAnswer.hidden = !parentAskItem.classList.contains('answer-open')
-                // if (askAnswer.hidden === false) {
-                //     askAnswer.style.opacity = 1
-                // }
+
                 setInterval(() => {
                     askAnswer.style.opacity = 1
                     askAnswer.style.transform = 'translateY(0)'
@@ -283,7 +262,15 @@ function documentActions(e) {
 }
 
 
-
+// =======================================================================
+function redirectHome(event) {
+    event.preventDefault()
+    window.location.href = "index.html"
+}
+function redirectAbout(event) {
+    event.preventDefault()
+    window.location.href = "about.html"
+}
 // -----------------------------------------------------------------------
 
 
@@ -335,5 +322,129 @@ function Marquee(selector, speed) {
 window.addEventListener('load', () => {
     Marquee('.animation-line', speedAnimationValue)
 })
+
+
+
+
+
+// ======================================================================
+
+// IntersectionObserver
+
+// let options = {
+//     root: null,
+//     rootMargin: "0px 0px 0px 0px",
+//     /*
+//     threshhold: 0.3 відсоток появи об'єкту у в'юпорті 0.3 це 30% від розміру елементу який відслідковується
+//     0 це будь яка поява
+//     1 це повна поява об'кта в в'юпорті
+//     */
+//     threshhold: 0.3,
+// }
+
+// let callback = (entries, observer) => {
+//     entries.forEach((entry) => {
+//         const targetElement = entry.target
+//         if (entry.isIntersecting) {
+//             targetElement.classList.add("show")
+//             if (targetElement.closest('.hero__title')) {
+//                 startInterval()
+//                 // Зупиняємо спостереження, оскільки функція вже викликана
+//                 // надибав такий варіант, працює, бо по іншому ніяк не міг це зробити
+//                 observer.unobserve(entry.target)
+//             }
+//             //console.log("елемент видно")
+//         } else {
+//             // targetElement.classList.remove("show")
+//             // console.log("елемент не видно")
+//             if (!targetElement.closest('.hero__title')) {
+//                 targetElement.classList.remove("show")
+//             }
+//         }
+//     })
+// }
+
+// let observer = new IntersectionObserver(callback, options)
+
+// якщо один об'єкт
+// let target = document.querySelector(".hero__statistic")
+// observer.observe(target)
+
+// якщо об'єктів багато
+// let someElements = document.querySelectorAll(".hero__statistic")
+// someElements.forEach(someElement => {
+//     observer.observe(someElement)
+// })
+
+
+
+
+// let options = {
+//     root: null,
+//     rootMargin: "0px 0px 0px 0px",
+//     threshold: 0.3,
+// }
+
+// let callback = (entries, observer) => {
+//     entries.forEach((entry) => {
+//         const targetElement = entry.target
+//         if (entry.isIntersecting) {
+//             targetElement.classList.add("show")
+//             if (targetElement.closest('.hero__title')) {
+//                 startInterval(targetElement)
+//                 observer.unobserve(entry.target)
+//             }
+//         } else {
+//             if (!targetElement.closest('.hero__title')) {
+//                 targetElement.classList.remove("show")
+//             }
+//         }
+//     })
+// }
+
+// let observer = new IntersectionObserver(callback, options)
+
+// let heroTitles = document.querySelectorAll(".hero__title")
+// heroTitles.forEach(heroTitle => {
+//     observer.observe(heroTitle)
+// })
+
+
+
+// function dataToNum(elem) {
+//     return parseFloat(elem)
+// }
+
+// function startInterval(itemNum) {
+//     let itemEnd = dataToNum(itemNum.dataset.end);
+//     let itemDelay = dataToNum(itemNum.dataset.delay);
+//     let itemSpeed = parseFloat(itemNum.dataset.speed) || 1;
+//     let usePercent = itemNum.dataset.usePercent;
+//     console.log(itemEnd)
+
+//     if (itemNum.classList.contains('show')) {
+//         let i = 0;
+//         let step = usePercent ? 1 : Math.ceil(itemEnd / 100);
+//         const intervalId = setInterval(() => {
+//             i += step;
+
+//             // Перевірка, чи usePercent не є пустим рядком
+//             if (usePercent && i < 100) {
+//                 i = itemEnd
+//             } else if (!usePercent && i > itemEnd) {
+//                 i = 100
+//             }
+
+//             // Використовуємо toLocaleString для форматування числа
+//             let formattedValue = usePercent ? `${i.toLocaleString()} %` : `${i.toLocaleString()} +`;
+//             itemNum.textContent = formattedValue;
+
+//             if (usePercent && i === 100 || !usePercent && i === itemEnd) {
+//                 clearInterval(intervalId);
+//             }
+//         }, itemDelay * itemSpeed);
+//     }
+// }
+
 
 
