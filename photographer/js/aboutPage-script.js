@@ -1,4 +1,7 @@
 "use strict"
+
+// перехід на інші сторінки
+
 function redirectHome(event) {
     event.preventDefault()
     window.location.href = "index.html"
@@ -16,17 +19,14 @@ function redirectServices(event) {
     event.preventDefault()
     window.location.href = "services.html"
 }
-// -----------------------------------------------------------------------
-
-function changeSliderPlace(element, width, oldPlace, newPlace, oldPosition, newPosition) {
-    if (element) {
-        if (window.innerWidth <= width) {
-            newPlace.insertAdjacentElement(newPosition, element)
-        } else {
-            oldPlace.insertAdjacentElement(oldPosition, element)
-        }
-    }
+function redirectContacts(event) {
+    event.preventDefault()
+    window.location.href = "contacts.html"
 }
+
+// ========================================================================================
+// ========================================================================================
+
 
 
 const navigationBlock = document.querySelector('.header__navigation')
@@ -47,70 +47,10 @@ function resize() {
 window.addEventListener('load', resize)
 window.addEventListener('resize', resize)
 
-// ------------------------------------------------------------------------------------
+// ========================================================================================
+// ========================================================================================
 
-const clientsSlider = document.querySelector('#clientsSlider')
-const clientsNewPlace = document.querySelector('.clients__container')
-const clientsOldPlace = document.querySelector('#commentsOldPlace')
-window.addEventListener('load', changeSliderPlace(clientsSlider, 797, clientsOldPlace, clientsNewPlace, "afterbegin", "beforeend"))
-window.addEventListener('resize', changeSliderPlace(clientsSlider, 797, clientsOldPlace, clientsNewPlace, "afterbegin", "beforeend"))
-
-
-// ------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-new Swiper('.comment__box', {
-    // стрілки виводяться через before, after ті, що за замовченням в html
-    // можна вказувати будь які стрілки
-
-    navigation: {
-        nextEl: '#nextComment',
-        prevEl: '#backComment'
-    },
-    grabCursor: true,
-    keyboard: {
-        enabled: true,
-        onlyInVieport: true,
-        pageDown: true,
-    },
-    mousewheel: {
-        sensitivity: 1,
-        eventsTarget: ".clients__container"
-    },
-    slidesPerView: '3',
-    watchOverFlow: true,
-    spaceBetween: 30,
-    //slidesPerGroup: 3,
-    centeredSlides: true,
-    initialSlide: 3,
-
-    // є різні ефекти  fade flip cube coverFlow
-    effect: "coverflow",
-    coverFlowEffect: {
-        rotate: 20,
-        stretch: 50,
-        slideShadows: true,
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-        },
-        670: {
-            slidesPerView: 2,
-        },
-        1020: {
-            slidesPerView: 3,
-        }
-    }
-})
-
-// -----------------------------------------------------------------------
+// Анімація рекламної стрічки
 
 const animationLine = document.querySelectorAll('.animation-line')
 
@@ -162,9 +102,11 @@ window.addEventListener('load', () => {
 })
 
 
-// -----------------------------------------------------------------------
 
+// ==============================================================================
+// ==============================================================================
 
+// Делегування
 
 document.addEventListener("click", documentActions)
 
@@ -176,8 +118,8 @@ function documentActions(e) {
     }
 }
 
-
-// ------------------------------------------------------
+// ==============================================================================
+// ==============================================================================
 
 
 let options = {
@@ -209,7 +151,6 @@ let heroTitles = document.querySelectorAll(".hero__title")
 heroTitles.forEach(heroTitle => {
     observer.observe(heroTitle)
 })
-
 
 
 function dataToNum(elem) {

@@ -1,6 +1,28 @@
 "use strict"
 
+function redirectAbout(event) {
+    event.preventDefault()
+    window.location.href = "about.html"
+}
+function redirectServices(event) {
+    event.preventDefault()
+    window.location.href = "services.html"
+}
+function redirectPortfolio(event) {
+    event.preventDefault()
+    window.location.href = "portfolio.html"
+}
+
+function redirectContacts(event) {
+    event.preventDefault()
+    window.location.href = "contacts.html"
+}
+
+
+// ===================================================================================
+
 // swipper
+
 // new Swiper('.swiper-container', {
 
 // стрілки виводяться через before, after ті, що за замовченням в html
@@ -51,128 +73,10 @@
 // якщо свайпер знаходиться всередині флекс-елемента, то для цього елемента
 // вказати min-width: 0;
 
-// -------------------------------------------------------------------------
-
-new Swiper('.photowork__box', {
-    navigation: {
-        nextEl: '#nextPortfolio',
-        prevEl: '#backPortfolio'
-    },
-    grabCursor: true,
-    keyboard: {
-        enabled: true,
-        onlyInVieport: true,
-        pageDown: true,
-    },
-    mousewheel: {
-        sensitivity: 1,
-        eventsTarget: ".portfolio__container"
-    },
-    slidesPerView: '3',
-    watchOverFlow: true,
-    spaceBetween: 30,
-    centeredSlides: true,
-    initialSlide: 3,
-
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-        },
-        670: {
-            slidesPerView: 2,
-        },
-        1020: {
-            slidesPerView: 3,
-        }
-    }
-})
 
 
-
-
-new Swiper('.services__box', {
-    navigation: {
-        nextEl: '#nextServices',
-        prevEl: '#backServices'
-    },
-    grabCursor: true,
-    keyboard: {
-        enabled: true,
-        onlyInVieport: true,
-        pageDown: true,
-    },
-    mousewheel: {
-        sensitivity: 1,
-        eventsTarget: ".services__container"
-    },
-    slidesPerView: '1',
-    watchOverFlow: true,
-    spaceBetween: 30,
-
-    centeredSlides: true,
-    initialSlide: 3,
-})
-
-
-
-
-new Swiper('.comment__box', {
-    // стрілки виводяться через before, after ті, що за замовченням в html
-    // можна вказувати будь які стрілки
-
-    navigation: {
-        nextEl: '#nextComment',
-        prevEl: '#backComment'
-    },
-    grabCursor: true,
-    keyboard: {
-        enabled: true,
-        onlyInVieport: true,
-        pageDown: true,
-    },
-    mousewheel: {
-        sensitivity: 1,
-        eventsTarget: ".clients__container"
-    },
-    slidesPerView: '3',
-    watchOverFlow: true,
-    spaceBetween: 30,
-    //slidesPerGroup: 3,
-    centeredSlides: true,
-    initialSlide: 3,
-
-    // є різні ефекти  fade flip cube coverFlow
-    effect: "coverflow",
-    coverFlowEffect: {
-        rotate: 20,
-        stretch: 50,
-        slideShadows: true,
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-        },
-        670: {
-            slidesPerView: 2,
-        },
-        1020: {
-            slidesPerView: 3,
-        }
-    }
-})
-// ------------------------------------------------------------------------
-
-
-function changeSliderPlace(element, width, oldPlace, newPlace, oldPosition, newPosition) {
-    if (element) {
-        if (window.innerWidth <= width) {
-            newPlace.insertAdjacentElement(newPosition, element)
-        } else {
-            oldPlace.insertAdjacentElement(oldPosition, element)
-        }
-    }
-}
-
+// =======================================================================================
+// =======================================================================================
 
 
 const navigationBlock = document.querySelector('.header__navigation')
@@ -193,41 +97,9 @@ function resize() {
 window.addEventListener('load', resize)
 window.addEventListener('resize', resize)
 
-// ------------------------------------------------------------------------------------
 
-
-const servicesSliderIcon = document.querySelector('.titling__slider')
-const servicesSliderPlace = document.querySelector('.titling__slider-area')
-const servicesSliderNewPlace = document.querySelector('.services__container')
-
-if (servicesSliderIcon) {
-    window.addEventListener('load', changeSliderPlace(servicesSliderIcon, 1086, servicesSliderPlace, servicesSliderNewPlace, "afterbegin", "beforeend"))
-    window.addEventListener('resize', changeSliderPlace(servicesSliderIcon, 1086, servicesSliderPlace, servicesSliderNewPlace, "afterbegin", "beforeend"))
-}
-
-const portfolioSlider = document.querySelector('#portfolioSlider')
-const portfolioNewPlace = document.querySelector('.portfolio__container')
-const portfolioOldPlace = document.querySelector('#portfolioSliderOldPlace')
-if (portfolioSlider) {
-    window.addEventListener('load', changeSliderPlace(portfolioSlider, 1086, portfolioOldPlace, portfolioNewPlace, "afterbegin", "beforeend"))
-    window.addEventListener('resize', changeSliderPlace(portfolioSlider, 1086, portfolioOldPlace, portfolioNewPlace, "afterbegin", "beforeend"))
-}
-
-
-const clientsSlider = document.querySelector('#clientsSlider')
-const clientsNewPlace = document.querySelector('.clients__container')
-const clientsOldPlace = document.querySelector('#commentsOldPlace')
-window.addEventListener('load', changeSliderPlace(clientsSlider, 797, clientsOldPlace, clientsNewPlace, "afterbegin", "beforeend"))
-window.addEventListener('resize', changeSliderPlace(clientsSlider, 797, clientsOldPlace, clientsNewPlace, "afterbegin", "beforeend"))
-
-// -------------------------------------------------------------------------------------
-
-
-
-
-
-
-// ---------------------------------------------------------------------------------
+// =======================================================================================
+// =======================================================================================
 
 document.addEventListener("click", documentActions)
 
@@ -262,21 +134,8 @@ function documentActions(e) {
 }
 
 
-// =======================================================================
-function redirectHome(event) {
-    event.preventDefault()
-    window.location.href = "index.html"
-}
-function redirectAbout(event) {
-    event.preventDefault()
-    window.location.href = "about.html"
-}
-function redirectServices(event) {
-    event.preventDefault()
-    window.location.href = "services.html"
-}
-// -----------------------------------------------------------------------
-
+// =======================================================================================
+// =======================================================================================
 
 const animationLine = document.querySelectorAll('.animation-line')
 
@@ -306,6 +165,7 @@ if (window.innerWidth <= 797 && window.innerWidth >= 450) {
 } else {
     speedAnimationValue = laptopSpeed
 }
+
 
 function Marquee(selector, speed) {
     const parents = document.querySelectorAll(selector)

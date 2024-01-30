@@ -59,6 +59,7 @@ $mainFont: "Manrope", sans-serif;
         }
     }
 
+    
     // .header__logo
 
     &__logo{
@@ -70,6 +71,9 @@ $mainFont: "Manrope", sans-serif;
        // flex-basis: 8.3%;
         width: 100%;
         @include adaptiveValue("flex-basis", 104, 70);
+        img{
+            width: 100%;
+        }
     }
 
     // .header__navigation

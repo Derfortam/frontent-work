@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- zxx -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contacts-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!--! <link rel="shortcut icon" href="" type="image/x-icon"> -->
+    <title>Photographer Portfolio Website </title>
+</head>
+
+
+
+<body>
+    <div class="wrapper">
+
+        <header class="header header--fixed">
+            <div class="header__container header__container--width">
+                <a class="header__logo" href="index.html" onclick="redirectHome(event)"> <img src="img/header/logo.svg"
+                        alt="logo"></a>
+                <div class="header__navigation">
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__item ">
+                                <a href="index.html" onclick="redirectHome(event)" class="menu__link">Home</a>
+                            </li>
+                            <li class="menu__item ">
+                                <a href="about.html" onclick="redirectAbout(event)" class="menu__link">About Me</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="portfolio.html" onclick="redirectPortfolio(event)"
+                                    class="menu__link">Portfolio</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="services.html" onclick="redirectServices(event)"
+                                    class="menu__link">Services</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- <a href="#" class="header__button">Contact Me</a> -->
+                </div>
+                <a href="#" class="header__button">Contact Me</a>
+                <div class="header__area-burger">
+                    <button class="header__burger">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+
+
+
+        <main class="page">
+            <div class="page__hero hero hero--margin">
+                <div class="hero__container">
+                    <div class="hero__all-content">
+                        <div class="hero__content">
+
+                            <div class="hero__background"> <img src="img/other-pages/page-contacts/image.webp"
+                                    alt="background" class="hero__background"></div>
+
+                            <div class="social-media">
+                                <a target="_blank" href="#" class="social-media__link">
+                                    <div class="social-media__icon _i-facebook"></div>
+                                </a>
+                                <a target="_blank" href="#" class="social-media__link">
+                                    <div class="social-media__icon _i-twitter"></div>
+                                </a>
+                                <a target="_blank" href="#" class="social-media__link">
+                                    <div class="social-media__icon _i-linkedin"></div>
+                                </a>
+                            </div>
+
+                            <div class="hero__info">
+                                <span class="hero__over-title">Contact Me</span>
+                                <h2 class="hero__title">Get in Touch with Me</h2>
+                                <div class="hero__text">
+                                    <p>Step into a world of timeless photography with Damien Braun. Explore our range of
+                                        photography services, each crafted to tell your unique story through captivating
+                                        images. Whether it's the magic of portraits, the emotion of events, or the
+                                        allure of
+                                        commercial photography, we're here to bring your vision to life.</p>
+                                </div>
+                            </div>
+                            <div class="hero__down">
+                                <span class="hero__text-down">Scroll Down To Send me a Message</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page__contact-info contact-info contact-info--margin">
+                <div class="contact-info__container">
+                    <article class="contact-info__block">
+                        <div class="contact-info__content">
+                            <h3 class="contact-info__title">Contact Information</h3>
+                            <div class="contact-info__text">
+                                <p>Feel free to reach out to us through various channels. We are available by phone,
+                                    email, and social media for your convenience.</p>
+                            </div>
+                        </div>
+                        <div class="contact-info__info">
+                            <address class="contact-info__address">
+                                <a href="tel:+11234567890" class="contact-info__link _i-arrow45">+1-123-456-7890</a>
+                                <a href="#" class="contact-info__link _i-arrow45">info@damien braunphotography.com</a>
+                            </address>
+                        </div>
+                    </article>
+
+                    <article class="contact-info__block">
+                        <div class="contact-info__content">
+                            <h3 class="contact-info__title">Send Me a Message</h3>
+                            <div class="contact-info__text">
+                                <p>Have a specific inquiry or message for us? Please use the contact form below, and
+                                    we'll get back to you promptly.</p>
+                            </div>
+                        </div>
+                        <div class="contact-info__info">
+                            <form id="myForm" action="#" method="post" class="contact-info__form form">
+                                <div class="form__block">
+                                    <label for="name-input" class="form__label">First Name</label>
+                                    <input required type="text" id="name-input" name="name" placeholder="first name">
+                                </div>
+                                <div class="form__block">
+                                    <label for="last-name-input" class="form__label">Last Name</label>
+                                    <input required type="text" id="last-name-input" name="last-name"
+                                        placeholder="last name">
+                                </div>
+                                <div class="form__block">
+                                    <label for="email-input" class="form__label">Email</label>
+                                    <input required type="email" id="email-input" name="email"
+                                        placeholder="email address">
+                                </div>
+                                <div class="form__block">
+                                    <label for="phone-input" class="form__label">Phone Number</label>
+                                    <input required type="tel" id="phone-input" name="tel" placeholder="Phone Number">
+                                </div>
+                                <div class="form__block">
+                                    <label for="textarea-input" class="form__label">Your Message</label>
+                                    <textarea name="message" id="textarea-input" placeholder=" message"></textarea>
+                                </div>
+                            </form>
+
+                            <div class="form__area-button">
+                                <button form="myForm" type="submit" class="form__button">
+                                    Send Message
+                                </button>
+                                <div class="arrow-button arrow-button--size _i-arrow45">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+
+
+            <section class="page__clients clients clients--margin">
+                <div class="clients__container">
+                    <div class="titling titling--flex titling--bottom-border">
+                        <div class="titling__area">
+                            <div class="titling__names">
+                                <span class="titling__over-title">Testimonials</span>
+                                <h3 class="titling__title">What My Clients Say</h3>
+                            </div>
+                            <div class="titling__reviews">
+                                <h5 class="reviews__title">
+                                    Total Reviews
+                                </h5>
+                                <span class="reviews__number">123</span>
+                            </div>
+                        </div>
+                        <div id="commentsOldPlace" class="titling__slider-area">
+                            <div id="clientsSlider" class="titling__slider">
+                                <div id="backComment" class="titling__left _i-slideLeft">
+                                </div>
+                                <div id="nextComment" class="titling__right _i-slideRight"></div>
+                            </div>
+                            <div class="titling__button">
+                                <button class="button__titling _i-arrow45">View All Services</button>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="comment comment__box">
+                        <div class="swiper-wrapper comment__wrapper">
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">John Smith</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien has an incredible talent for making every event feel effortless, and
+                                            the results speak for themselves.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Samantha Davis</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>I was blown away by Damien's ability to capture the essence of our wedding
+                                            day. Hes photographs are our memories.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </section>
+
+            <div class="page__decorative-text decorative-text decorative-text--margin">
+                <div class="decorative-text__container">
+                    <span class="decorative-text__item _i-vectorD"></span>
+                    <span class="decorative-text__item _i-vectorA"></span>
+                    <span class="decorative-text__item _i-vectorM"></span>
+                    <span class="decorative-text__item _i-vectorI"></span>
+                    <span class="decorative-text__item _i-vectorE"></span>
+                    <span class="decorative-text__item _i-vectorN"></span>
+                </div>
+            </div>
+
+            <!-- проболема! Для 1 фнімаційного елементу не працює -->
+            <div data-speed-laptop="1" data-speed-tablet="0.5" data-speed-phone="0.3" class="animation-line">
+                <div class="animation-line__box">
+                    <span class=" _i-star4">Event Photography</span>
+
+                    <span class=" _i-star4">Comercial Photography </span>
+
+                    <span class=" _i-star4"> Product Photography</span>
+
+                    <span class=" _i-star4"> Wedding Photography</span>
+
+                    <span class=" _i-star4"> Landscape Photography</span>
+
+                    <span class=" _i-star4"> Branding Photography</span>
+
+                    <span class=" _i-star4">Portrait Photography </span>
+
+                    <span class=" _i-star4">Event Photography</span>
+
+                    <span class=" _i-star4">Comercial Photography </span>
+
+                    <span class=" _i-star4"> Product Photography</span>
+
+                    <span class=" _i-star4"> Wedding Photography</span>
+
+                    <span class=" _i-star4"> Landscape Photography</span>
+
+                    <span class=" _i-star4"> Branding Photography</span>
+
+                    <span class=" _i-star4">Portrait Photography </span>
+                </div>
+            </div>
+
+        </main>
+
+
+        <footer class="footer">
+            <div class="footer__container">
+                <img src="img/footer/design.svg" alt="decotative" class="footer__decor-left">
+                <img src="img/footer/design.svg" alt="decotative" class="footer__decor-right">
+                <div class="footer__body">
+                    <div class="footer__titling">
+                        <span class="footer__over-title">A more meaningful home for photography</span>
+                        <div class="titling__credo">
+                            <div class="titling__text-credo">
+                                <p>LET'S</p>
+                            </div>
+                            <div class="arrow-button arrow-button--size _i-arrow45"></div>
+                            <div class="titling__text-credo">
+                                <p>WORK TOGETHER </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__navigation">
+                        <ul class="footer__menu">
+                            <li class="footer__menu-item">
+                                <h5 class="footer__item-title">Home</h5>
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">About Me</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">My Works</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Testimonials</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer__menu-item">
+                                <h5 class="footer__item-title">Clients</h5>
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Klovesto</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Nukeway</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Cloven’s</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">MenVol</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer__menu-item">
+                                <h5 class="footer__item-title">Portfolio</h5>
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Events</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Portrait</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Branding</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Commerciale</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Wedding</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer__menu-item">
+                                <h5 class="footer__item-title">Services</h5>
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Portraits</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Events</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="#" class="footer__link">Commercial</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__container-bottom">
+                    <div class="footer__terms">
+                        <a href="#" class="footer__link-terms">Terms & Conditions</a>
+                        <a href="#" class="footer__link-terms">Privacy Policy</a>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-media__link">
+                            <div class="social-media__icon _i-facebook"></div>
+                        </a>
+                        <a href="#" class="social-media__link">
+                            <div class="social-media__icon _i-twitter"></div>
+                        </a>
+                        <a href="#" class="social-media__link">
+                            <div class="social-media__icon _i-linkedin"></div>
+                        </a>
+                    </div>
+                    <div class="footer__author">
+                        <p>© 2024 Damien Braun Photography. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/contactsPage.js"></script>
+    <script src="js/displacement.js"></script>
+    <script src="js/sliders.js"></script>
+
+</body>
+
+
+
+</html>

@@ -485,6 +485,18 @@ body{
                     max-width: toRem(140);
                 }
             }
+            &__left, &__right{
+                transition: all 0.3s;
+                @media(any-hover:hover){
+                    &:hover{
+                        background-color: $greyGradient;
+                    }
+                }
+                &:active{
+                    background-color:$grice ;
+                }
+            }
+        
         }
     }
 }

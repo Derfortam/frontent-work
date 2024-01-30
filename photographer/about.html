@@ -18,7 +18,8 @@
 
         <header class="header header--fixed">
             <div class="header__container header__container--width">
-                <img class="header__logo" src="img/header/logo.svg" alt="logo">
+                <a class="header__logo" href="index.html" onclick="redirectHome(event)"> <img src="img/header/logo.svg"
+                        alt="logo"></a>
                 <div class="header__navigation">
                     <nav class="menu">
                         <ul class="menu__list">
@@ -40,7 +41,7 @@
                     </nav>
                     <!-- <a href="#" class="header__button">Contact Me</a> -->
                 </div>
-                <a href="#" class="header__button">Contact Me</a>
+                <a href="contacts.html" onclick="redirectContacts(event)" class="header__button">Contact Me</a>
                 <div class="header__area-burger">
                     <button class="header__burger">
                         <span></span>
@@ -628,6 +629,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/aboutPage-script.js"></script>
+    <script src="js/displacement.js"></script>
+    <script src="js/sliders.js"></script>
 
 </body>
 

@@ -608,6 +608,9 @@ body.menu-open {
         flex-basis: 4.375rem;
   }
 }
+.header__logo img {
+  width: 100%;
+}
 @media (max-width: 44em) {
   .header__navigation {
     position: fixed;
@@ -2738,6 +2741,18 @@ body.menu-open {
   .clients__container .titling__slider {
     max-width: 8.75rem;
   }
+}
+.clients__container .titling__left, .clients__container .titling__right {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (any-hover: hover) {
+  .clients__container .titling__left:hover, .clients__container .titling__right:hover {
+    background-color: rgb(47, 47, 55);
+  }
+}
+.clients__container .titling__left:active, .clients__container .titling__right:active {
+  background-color: #62646C;
 }
 
 @media (min-width: 103.5625em) {

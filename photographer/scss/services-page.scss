@@ -74,16 +74,24 @@ body{
 // ====================================================================
 
 
-
-
 .page {
-    padding-top: toRem(150);
     @include adaptiveValue("padding-top", 184, 114);
     // .page__photography
 
     &__photography {
     }
+
+     // .page__prices
+
+     &__prices {
+    }
+
+      // .page__hero
+
+      &__hero {
+    }
 }
+
 .photography {
     &--margin{
         @include adaptiveValue("margin-bottom", 80, 40);;
@@ -237,6 +245,15 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.3s;
+        @media(any-hover:hover){
+            &:hover{
+                background-color: $greyGradient;
+            }
+        }
+        &:active{
+            background-color: $grice;
+        }
         @media(max-width: toEm(850)){
             @include adaptiveValue("flex-basis", 52, 32);
         }
@@ -248,18 +265,6 @@ body{
     &__nav-next {
     }
 }
-
-
-
-.page {
-
-    // .page__hero
-
-    &__hero {
-    }
-}
-
-
 
 .hero {
 
@@ -396,20 +401,6 @@ body{
         }
     }
 }
-
-
-
-
-.page {
-
-    // .page__prices
-
-    &__prices {
-    }
-}
-
-
-
 
 .prices {
 

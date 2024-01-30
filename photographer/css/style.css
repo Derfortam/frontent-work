@@ -608,6 +608,9 @@ body.menu-open {
         flex-basis: 4.375rem;
   }
 }
+.header__logo img {
+  width: 100%;
+}
 @media (max-width: 44em) {
   .header__navigation {
     position: fixed;

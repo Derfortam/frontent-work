@@ -608,6 +608,9 @@ body.menu-open {
         flex-basis: 4.375rem;
   }
 }
+.header__logo img {
+  width: 100%;
+}
 @media (max-width: 44em) {
   .header__navigation {
     position: fixed;
@@ -1828,9 +1831,6 @@ body.menu-open {
   color: #232329;
 }
 
-.page {
-  padding-top: 9.375rem;
-}
 @media (min-width: 103.5625em) {
   .page {
     padding-top: 11.5rem;
@@ -2221,6 +2221,8 @@ body.menu-open {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (min-width: 103.5625em) {
   .photography__nav-back, .photography__nav-next {
@@ -2291,6 +2293,14 @@ body.menu-open {
     -ms-flex-preferred-size: 2.625rem;
         flex-basis: 2.625rem;
   }
+}
+@media (any-hover: hover) {
+  .photography__nav-back:hover, .photography__nav-next:hover {
+    background-color: rgb(47, 47, 55);
+  }
+}
+.photography__nav-back:active, .photography__nav-next:active {
+  background-color: #62646C;
 }
 @media (max-width: 53.125em) and (min-width: 103.5625em) {
   .photography__nav-back, .photography__nav-next {

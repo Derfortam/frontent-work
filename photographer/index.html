@@ -29,7 +29,8 @@
                                 <a href="about.html" onclick="redirectAbout(event)" class="menu__link">About Me</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Portfolio</a>
+                                <a href="portfolio.html" onclick="redirectPortfolio(event)"
+                                    class="menu__link">Portfolio</a>
                             </li>
                             <li class="menu__item">
                                 <a href="services.html" onclick="redirectServices(event)"
@@ -39,7 +40,7 @@
                     </nav>
                     <!-- <a href="#" class="header__button">Contact Me</a> -->
                 </div>
-                <a href="#" class="header__button">Contact Me</a>
+                <a href="contacts.html" onclick="redirectContacts(event)" class="header__button">Contact Me</a>
                 <div class="header__area-burger">
                     <button class="header__burger">
                         <span></span>
@@ -151,17 +152,20 @@
                             </div>
                             <div class="about__contacts">
                                 <h3 class="about__title _i-star4">Contact Information</h3>
-                                <address class="about__info-contact">
+                                <div class="about__info-contact">
                                     <div class="about__block-contact">
                                         <h5 class="about__title-contact">Email</h5>
-                                        <a href="mailto:damienbraun@gmail.com"
-                                            class="about__link">damienbraun@gmail.com</a>
+                                        <address>
+                                            <a href="mailto:damienbraun@gmail.com"
+                                                class="about__link">damienbraun@gmail.com</a>
+                                        </address>
                                     </div>
                                     <div class="about__block-contact">
                                         <h5 class="about__title-contact">Phone Number</h5>
-                                        <a href="tel:+00000000000" class="about__link">+00 000000000</a>
+                                        <address> <a href="tel:+00000000000" class="about__link">+00 000000000</a>
+                                        </address>
                                     </div>
-                                </address>
+                                </div>
                                 <div class="about__bottom">
                                     <div class="social-media">
                                         <a target="_blank" href="#" class="social-media__link">
@@ -976,6 +980,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/sliders.js"></script>
+    <script src="js/displacement.js"></script>
 
 </body>
 

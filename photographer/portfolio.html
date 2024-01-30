@@ -18,27 +18,29 @@
 
         <header class="header header--fixed">
             <div class="header__container header__container--width">
-                <img class="header__logo" src="img/header/logo.svg" alt="logo">
+                <a class="header__logo" href="index.html" onclick="redirectHome(event)"> <img src="img/header/logo.svg"
+                        alt="logo"></a>
                 <div class="header__navigation">
                     <nav class="menu">
                         <ul class="menu__list">
                             <li class="menu__item ">
                                 <a href="index.html" onclick="redirectHome(event)" class="menu__link">Home</a>
                             </li>
-                            <li class="menu__item menu__item--active">
-                                <a href="#" class="menu__link">About Me</a>
+                            <li class="menu__item ">
+                                <a href="about.html" onclick="redirectAbout(event)" class="menu__link">About Me</a>
                             </li>
-                            <li class="menu__item">
+                            <li class="menu__item menu__item--active">
                                 <a href="#" class="menu__link">Portfolio</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Services</a>
+                                <a href="services.html" onclick="redirectServices(event)"
+                                    class="menu__link">Services</a>
                             </li>
                         </ul>
                     </nav>
                     <!-- <a href="#" class="header__button">Contact Me</a> -->
                 </div>
-                <a href="#" class="header__button">Contact Me</a>
+                <a href="contacts.html" onclick="redirectContacts(event)" class="header__button">Contact Me</a>
                 <div class="header__area-burger">
                     <button class="header__burger">
                         <span></span>
@@ -48,6 +50,735 @@
         </header>
 
         <main class="page">
+            <section class="page__hero hero hero--margin">
+                <div class="hero__container">
+                    <div class="hero__content">
+                        <img src="img/other-pages/page-portfolio/main-img.webp" alt="background"
+                            class="hero__background">
+                        <div class="hero__titling">
+                            <span class="hero__over-title">Portfolio</span>
+                            <h2 class="hero__title">Visual Poetry in Pixels</h2>
+                            <div class="hero__text">
+                                <p>Step into a visual journey that encapsulates the essence of my lens. Each photograph
+                                    in this portfolio is a narrative, a frozen moment in time, and a testament to the
+                                    artistry and passion poured into every frame. Explore the diverse tapestry of
+                                    stories I've had the privilege to capture and witness the world through my lens.</p>
+                            </div>
+                        </div>
+                        <div class="hero__bottom">
+                            <span class="hero__icon _i-star4"></span>
+                            <span class="hero__mark">Scroll Down To See All Services</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="hero__brands brands">
+                    <h5 class="brands__title">bRANDS i hAVE wORKED wITH</h5>
+                    <div data-speed-laptop="1" data-speed-tablet="0.5" data-speed-phone="0.3" class="animation-line">
+                        <div class="animation-line__box">
+                            <img src="img/other-pages/page-portfolio/brands/infinity.svg" alt="brand"
+                                class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/omega.svg" alt="brand"
+                                class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/wheel.svg" alt="brand"
+                                class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/club.svg" alt="brand" class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/edge.svg" alt="brand" class="brands__brand">
+
+                            <img src="img/other-pages/page-portfolio/brands/infinity.svg" alt="brand"
+                                class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/omega.svg" alt="brand"
+                                class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/wheel.svg" alt="brand"
+                                class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/club.svg" alt="brand" class="brands__brand">
+                            <img src="img/other-pages/page-portfolio/brands/edge.svg" alt="brand" class="brands__brand">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="page__all-carousel page__all-carousel--margin ">
+
+                <section id="carousel-portrait" class="page__carousel carousel carousel--margin">
+                    <div class="carousel__container">
+                        <div id="portrait-new-place" class="carousel__content carousel__content--border-top">
+                            <div id="portrait-old-place" class="carousel__titling">
+                                <h3 class="carousel__title">Portraits Photography</h3>
+                                <div id="portrait-slider" class="carousel__slider">
+                                    <div class="carousel__prev portrait-prev _i-slideLeft"></div>
+                                    <div class="carousel__next portrait-next _i-slideRight"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-container photowork__box portrait__box">
+                                <div class="swiper-wrapper photowork__wrapper">
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s1-img1.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Faces of Resilience</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">March 2022</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s1-img2.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Innocence Unveiled</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s1-img3.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Elegance in Monochrom</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img1.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Faces of Resilience</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">March 2022</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img2.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">A Wedding Tale</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img3.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Product Elegance</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="carousel-event" class="page__carousel carousel carousel--margin">
+                    <div class="carousel__container">
+                        <div id="event-new-place" class="carousel__content">
+                            <div id="event-old-place" class="carousel__titling">
+                                <h3 class="carousel__title">Events Photography</h3>
+                                <div id="event-slider" class="carousel__slider">
+                                    <div class="carousel__prev event-prev _i-slideLeft"></div>
+                                    <div class="carousel__next event-next _i-slideRight"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-container photowork__box event__box">
+                                <div class="swiper-wrapper photowork__wrapper">
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s2-img1.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">A Wedding Tale</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">March 2022</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s2-img2.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Corporate Excellence Summit</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s2-img3.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Festival of Colors</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img1.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Faces of Resilience</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">March 2022</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img2.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">A Wedding Tale</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img3.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Product Elegance</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="carousel-commercial" class="page__carousel carousel carousel--margin">
+                    <div class="carousel__container">
+                        <div id="commercial-new-place" class="carousel__content carousel__content--border-none">
+                            <div id="commercial-old-place" class="carousel__titling">
+                                <h3 class="carousel__title">Commercial Photography</h3>
+                                <div id="commercial-slider" class="carousel__slider">
+                                    <div class="carousel__prev commercial-prev _i-slideLeft"></div>
+                                    <div class="carousel__next commercial-next _i-slideRight"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-container photowork__box commercial__box">
+                                <div class="swiper-wrapper photowork__wrapper">
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s3-img1.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Product Elegance</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">March 2022</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s3-img2.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Culinary Delights</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/other-pages/page-portfolio/s3-img3.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Festival of Colors</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img1.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Faces of Resilience</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">March 2022</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img2.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">A Wedding Tale</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide photowork__slide">
+                                        <figure class="photowork__content">
+                                            <a href="#" class="photowork__image">
+                                                <img src="img/page/portfolio/img3.webp" alt="img">
+                                            </a>
+                                            <figcaption class="photowork__info">
+                                                <h5 class="photowork__name">Product Elegance</h5>
+                                                <a href="#" class="photowork__link _i-arrow45">View Project</a>
+                                                <div class="photowork__date">January 2020</div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+            <section class="page__ask ask ask--margin">
+                <div class="ask__container">
+                    <div class="titling titling--flex titling--bottom-border">
+                        <div class="titling__area">
+                            <div class="titling__names">
+                                <span class="titling__over-title">FAQ’s</span>
+                                <h3 class="titling__title">Frequently Asked Questions</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ask__section">
+                        <ul class="ask__block">
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">What type of photography do you specialize in?</h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">How can I book a photography session with you?</h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">What equipment do you use for your photography?</h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">Can I request a specific location for a </h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="ask__block">
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">What is your editing process like?</h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">Are digital files included in your photography packages?
+                                    </h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">Do you offer prints of your photographs?</h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>Yes, prints are available for purchase. Explore the 'Prints' section for more
+                                            details on sizes and pricing.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ask__item">
+                                <div class="ask__icon _i-slideUp"></div>
+                                <div class="ask__content">
+                                    <h4 class="ask__question">How long does it take to receive the edited photos after a
+                                        session?</h4>
+                                    <div class="ask__answer" hidden="">
+                                        <p>I specialize in [Portrait, Landscape, Event, etc.] photography, capturing
+                                            moments that tell unique stories.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page__clients clients clients--margin">
+                <div class="clients__container">
+                    <div class="titling titling--flex titling--bottom-border">
+                        <div class="titling__area">
+                            <div class="titling__names">
+                                <span class="titling__over-title">Testimonials</span>
+                                <h3 class="titling__title">What My Clients Say</h3>
+                            </div>
+                            <div class="titling__reviews">
+                                <h5 class="reviews__title">
+                                    Total Reviews
+                                </h5>
+                                <span class="reviews__number">123</span>
+                            </div>
+                        </div>
+                        <div id="commentsOldPlace" class="titling__slider-area">
+                            <div id="clientsSlider" class="titling__slider">
+                                <div id="backComment" class="titling__left _i-slideLeft">
+                                </div>
+                                <div id="nextComment" class="titling__right _i-slideRight"></div>
+                            </div>
+                            <div class="titling__button">
+                                <button class="button__titling _i-arrow45">View All Services</button>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="comment comment__box">
+                        <div class="swiper-wrapper comment__wrapper">
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">John Smith</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien has an incredible talent for making every event feel effortless, and
+                                            the results speak for themselves.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Samantha Davis</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>I was blown away by Damien's ability to capture the essence of our wedding
+                                            day. Hes photographs are our memories.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide comment__slide">
+                                <div class="comment__block">
+                                    <div class="comment__decorative-up"></div>
+                                    <div class="comment__decorative-down"></div>
+                                    <div class="comment__titling">
+                                        <div class="comment__name-area">
+                                            <h4 class="comment__name">Emily Johnson</h4>
+                                            <h6 class="comment__location">USA, California</h6>
+                                        </div>
+                                        <div class="social-media">
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-facebook"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-twitter"></div>
+                                            </a>
+                                            <a href="#" class="social-media__link">
+                                                <div class="social-media__icon _i-linkedin"></div>
+                                            </a>
+                                        </div>
+                                        <div class="comment__stars">
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                            <span class="comment__icon _i-shapeStar"></span>
+                                        </div>
+                                    </div>
+                                    <div class="comment__text">
+                                        <p>Damien's photography doesn't just capture moments; it captures emotions. Hes
+                                            work
+                                            is
+                                            simply
+                                            mesmerizing.</p>
+                                    </div>
+                                    <div class="comment__decor-up"></div>
+                                    <div class="comment__decor-down"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </section>
+
+            <div class="page__decorative-text decorative-text decorative-text--margin">
+                <div class="decorative-text__container">
+                    <span class="decorative-text__item _i-vectorD"></span>
+                    <span class="decorative-text__item _i-vectorA"></span>
+                    <span class="decorative-text__item _i-vectorM"></span>
+                    <span class="decorative-text__item _i-vectorI"></span>
+                    <span class="decorative-text__item _i-vectorE"></span>
+                    <span class="decorative-text__item _i-vectorN"></span>
+                </div>
+            </div>
+
+            <div data-speed-laptop="1" data-speed-tablet="0.5" data-speed-phone="0.3" class="animation-line">
+                <div class="animation-line__box">
+                    <span class=" _i-star4">Event Photography</span>
+
+                    <span class=" _i-star4">Comercial Photography </span>
+
+                    <span class=" _i-star4"> Product Photography</span>
+
+                    <span class=" _i-star4"> Wedding Photography</span>
+
+                    <span class=" _i-star4"> Landscape Photography</span>
+
+                    <span class=" _i-star4"> Branding Photography</span>
+
+                    <span class=" _i-star4">Portrait Photography </span>
+
+                    <span class=" _i-star4">Event Photography</span>
+
+                    <span class=" _i-star4">Comercial Photography </span>
+
+                    <span class=" _i-star4"> Product Photography</span>
+
+                    <span class=" _i-star4"> Wedding Photography</span>
+
+                    <span class=" _i-star4"> Landscape Photography</span>
+
+                    <span class=" _i-star4"> Branding Photography</span>
+
+                    <span class=" _i-star4">Portrait Photography </span>
+                </div>
+            </div>
 
         </main>
 
@@ -166,7 +897,9 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/aboutPage-script.js"></script>
+    <script src="js/portfolio-script.js"></script>
+    <script src="js/displacement.js"></script>
+    <script src="js/sliders.js"></script>
 
 </body>
 

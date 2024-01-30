@@ -1,4 +1,7 @@
 "use strict"
+
+// перехід на інші сторінки
+
 function redirectHome(event) {
     event.preventDefault()
     window.location.href = "index.html"
@@ -7,6 +10,22 @@ function redirectAbout(event) {
     event.preventDefault()
     window.location.href = "about.html"
 }
+
+function redirectPortfolio(event) {
+    event.preventDefault()
+    window.location.href = "portfolio.html"
+}
+
+function redirectContacts(event) {
+    event.preventDefault()
+    window.location.href = "contacts.html"
+}
+
+// ========================================================================================
+// ========================================================================================
+
+// переміщення кнопки в навігаційному списку
+
 
 const navigationBlock = document.querySelector('.header__navigation')
 const navigationButton = document.querySelector('.header__button')
@@ -27,157 +46,100 @@ window.addEventListener('load', resize)
 window.addEventListener('resize', resize)
 
 
-
-const photographyContentSlider = document.querySelector('#photography-body')
-if (photographyContentSlider) {
-    new Swiper('#photography-body', {
-
-        // стрілки виводяться через before, after ті, що за замовченням в html
-        // можна вказувати будь які стрілки
-
-        navigation: {
-            nextEl: '.next-portrait',
-            prevEl: '.back-portrait'
-        },
-        grabCursor: true,
-        keyboard: {
-            enabled: true,
-            onlyInVieport: true,
-            pageDown: true,
-        },
-        mousewheel: {
-            sensitivity: 1,
-            eventsTarget: "#photography-body"
-        },
-        slidesPerView: 1,
-        watchOverFlow: true,
-        spaceBetween: 30,
-        // slidesPerGroup: 3,
-        centeredSlides: true,
-        initialSlide: 3,
-
-        // є різні ефекти  fade flip cube coverFlow
-        // effect: "coverflow",
-        // coverFlowEffect: {
-        //     rotate: 20,
-        //     stretch: 50,
-        //     slideShadows: true,
-        // },
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 1,
-        //     },
-        //     890: {
-        //         slidesPerView: 2,
-        //     },
-        //     1020: {
-        //         slidesPerView: 3,
-        //     }
-        // }
-    })
-}
+// ========================================================================================
+// ========================================================================================
 
 
+// // свайпер для першого слайдера
+
+// const photographyContentSlider = document.querySelector('#photography-body')
+// if (photographyContentSlider) {
+//     new Swiper('#photography-body', {
+//         navigation: {
+//             nextEl: '.next-portrait',
+//             prevEl: '.back-portrait'
+//         },
+//         grabCursor: true,
+//         keyboard: {
+//             enabled: true,
+//             onlyInVieport: true,
+//             pageDown: true,
+//         },
+//         mousewheel: {
+//             sensitivity: 1,
+//             eventsTarget: "#photography-body"
+//         },
+//         slidesPerView: 1,
+//         watchOverFlow: true,
+//         spaceBetween: 30,
+//         centeredSlides: true,
+//         initialSlide: 3,
+//     })
+// }
+
+// // ========================================================================================
+
+// // свайпер для 2 слайдера
+
+// const photographyEventSlider = document.querySelector('#event-body')
+// if (photographyEventSlider) {
+//     new Swiper('#event-body', {
+//         navigation: {
+//             nextEl: '.event-next',
+//             prevEl: '.event-back'
+//         },
+//         grabCursor: true,
+//         keyboard: {
+//             enabled: true,
+//             onlyInVieport: true,
+//             pageDown: true,
+//         },
+//         mousewheel: {
+//             sensitivity: 1,
+//             eventsTarget: "#event-body"
+//         },
+//         slidesPerView: 1,
+//         watchOverFlow: true,
+//         spaceBetween: 30,
+//         centeredSlides: true,
+//         initialSlide: 3,
+//     })
+// }
+
+// // ========================================================================================
+
+// // свайпер для 3 слайдера
+
+// const photographyCommercialSlider = document.querySelector('#commercial-body')
+// if (photographyCommercialSlider) {
+//     new Swiper('#commercial-body', {
+//         navigation: {
+//             nextEl: '.commercial-next',
+//             prevEl: '.commercial-back'
+//         },
+//         grabCursor: true,
+//         keyboard: {
+//             enabled: true,
+//             onlyInVieport: true,
+//             pageDown: true,
+//         },
+//         mousewheel: {
+//             sensitivity: 1,
+//             eventsTarget: "#commercial-body"
+//         },
+//         slidesPerView: 1,
+//         watchOverFlow: true,
+//         spaceBetween: 30,
+//         centeredSlides: true,
+//         initialSlide: 3,
+//     })
+// }
+
+// ========================================================================================
+// ========================================================================================
 
 
-const photographyEventSlider = document.querySelector('#event-body')
-if (photographyEventSlider) {
-    new Swiper('#event-body', {
-
-        // стрілки виводяться через before, after ті, що за замовченням в html
-        // можна вказувати будь які стрілки
-
-        navigation: {
-            nextEl: '.event-next',
-            prevEl: '.event-back'
-        },
-        grabCursor: true,
-        keyboard: {
-            enabled: true,
-            onlyInVieport: true,
-            pageDown: true,
-        },
-        mousewheel: {
-            sensitivity: 1,
-            eventsTarget: "#event-body"
-        },
-        slidesPerView: 1,
-        watchOverFlow: true,
-        spaceBetween: 30,
-        // slidesPerGroup: 3,
-        centeredSlides: true,
-        initialSlide: 3,
-
-        // є різні ефекти  fade flip cube coverFlow
-        // effect: "coverflow",
-        // coverFlowEffect: {
-        //     rotate: 20,
-        //     stretch: 50,
-        //     slideShadows: true,
-        // },
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 1,
-        //     },
-        //     890: {
-        //         slidesPerView: 2,
-        //     },
-        //     1020: {
-        //         slidesPerView: 3,
-        //     }
-        // }
-    })
-}
-
-const photographyCommercialSlider = document.querySelector('#commercial-body')
-if (photographyCommercialSlider) {
-    new Swiper('#commercial-body', {
-        navigation: {
-            nextEl: '.commercial-next',
-            prevEl: '.commercial-back'
-        },
-        grabCursor: true,
-        keyboard: {
-            enabled: true,
-            onlyInVieport: true,
-            pageDown: true,
-        },
-        mousewheel: {
-            sensitivity: 1,
-            eventsTarget: "#commercial-body"
-        },
-        slidesPerView: 1,
-        watchOverFlow: true,
-        spaceBetween: 30,
-        // slidesPerGroup: 3,
-        centeredSlides: true,
-        initialSlide: 3,
-
-        // є різні ефекти  fade flip cube coverFlow
-        // effect: "coverflow",
-        // coverFlowEffect: {
-        //     rotate: 20,
-        //     stretch: 50,
-        //     slideShadows: true,
-        // },
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 1,
-        //     },
-        //     890: {
-        //         slidesPerView: 2,
-        //     },
-        //     1020: {
-        //         slidesPerView: 3,
-        //     }
-        // }
-    })
-}
-
-
-
-// ------------------------------------------------------------------
-
+// Делегування
 
 document.addEventListener("click", documentActions)
 
@@ -214,8 +176,10 @@ function documentActions(e) {
 
 
 
-// -----------------------------------------------------------------------
+// ========================================================================================
+// ========================================================================================
 
+//  Анімування рекламної стрічки
 
 const animationLine = document.querySelectorAll('.animation-line')
 
@@ -262,6 +226,7 @@ function Marquee(selector, speed) {
     })
 }
 
+// виклик анімація при завантажені сайту
 window.addEventListener('load', () => {
     Marquee('.animation-line', speedAnimationValue)
 })
