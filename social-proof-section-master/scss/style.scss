@@ -1,0 +1,285 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_functions.scss";
+// Import font in this file because it`s only one font-family
+@import url("https://fonts.googleapis.com/css?family=League+Spartan:regular,500,700&display=swap");
+// font fz15
+$mainFont: "League Spartan", sans-serif;
+// colors
+
+$colorVeryDarkMagenta: #502050;
+$colorSoftPink: #ee68a4;
+$colorDarkGrayishMagenta: #937b92;
+$colorLightGrayishMagenta: #f7f2f7;
+$colorWhite: #ffffff;
+
+.wrapper{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.wrapper main{
+    flex-grow: 1;
+}
+
+//* container can changes
+[class*="__container"] {
+    max-width: toRem(1600);
+    margin: 0 auto;
+    padding: 0 toRem(15);
+}
+
+body{
+    font-family: $mainFont;
+    min-height: 100%;
+}
+
+
+// =========================================================================
+
+
+.page {
+    padding: 0 toRem(15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // .page__review
+
+    &__review {
+        max-width: toRem(1300);
+    }
+
+    // .page__decor
+
+    &__decor {
+        
+    }
+}
+
+.decor {
+    position: fixed;
+    z-index: 1;
+    // забрати можна за бажанням, але я зробив так
+    @media(max-width: toEm(500)){
+        display: none;
+    }
+    &--top{
+        left: 0;
+        top: 0;
+    }
+    &--bottom{
+        bottom: 0;
+        right: 0;
+    }
+}
+.decor--top {
+}
+.decor--bottom {
+}
+
+.review {
+    position: relative;
+    z-index: 3;
+    font-size: toRem(15);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: toRem(40);
+    @media(max-width: toEm(890)){
+        font-size: toRem(13);
+    }
+
+    // .review__content
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: toEm(30, 15);
+        align-items: center;
+        @media(max-width: toEm(670)){
+            grid-template-columns: repeat(1, 1fr);
+            gap: toRem(15);
+            text-align: center;
+        }
+    }
+
+    // .review__info
+
+    &__info {
+        display: flex;
+        gap: toRem(15);
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: toRem(400);
+        @media(max-width: toEm(670)){
+            max-width: 100%;
+        }
+    }
+
+    // .review__title
+
+    &__title {
+        font-size: toEm(45, 15);
+        font-weight: 700;
+        color: $colorVeryDarkMagenta;
+    }
+
+    // .review__text
+
+    &__text {
+        p{
+            color: $colorVeryDarkMagenta;
+            font-size: toEm(18, 15);
+            font-weight: 400;
+            line-height: 1.3;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    // .review__raiting
+
+    &__raiting {
+    }
+
+    // .review__comments
+
+    &__comments {
+    }
+}
+.raiting {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: toRem(15);
+
+    // .raiting__block
+
+    &__block {
+        background-color: $colorLightGrayishMagenta;
+        padding: toEm(10, 15) toEm(25, 15);
+        border-radius: toRem(8);
+        display: flex;
+        column-gap: toRem(25);
+        row-gap: toRem(10);
+       // justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: toRem(500);
+        @media(max-width: toEm(1200)){
+            justify-content: center;
+            text-align: center;
+        }
+        @media(max-width: toEm(670)){
+            max-width: 100%;
+            flex-direction: column;
+        }
+    }
+
+    // .raiting__stars
+
+    &__stars {
+        flex-shrink: 0;
+        display: inline-grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: toRem(8);
+    }
+
+    // .raiting__star
+
+    &__star {
+    }
+
+    // .raiting__name
+
+    &__name {
+        flex-grow: 1;
+            color: $colorVeryDarkMagenta;
+            font-size: toEm(20, 15);
+            font-weight: 700;
+    }
+}
+.comments {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(toRem(300), 1fr));
+    column-gap: toRem(30);
+    row-gap: toRem(15);
+
+    // .comments__block
+
+    &__block {
+        padding: toRem(30);
+        background-color: $colorVeryDarkMagenta;
+        color: $colorWhite;
+        border-radius: toRem(8);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: toRem(20);
+        row-gap: toRem(15);
+        @media(max-width: toEm(890)){
+            padding: toRem(20);
+        }
+    }
+
+    // .comments__profile
+
+    &__profile {
+        display: grid;
+        grid-template-columns:  auto 1fr;
+        column-gap: toRem(25);
+        align-items: center;
+    }
+
+    // .comments__img
+
+    &__img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        width: 100%;
+        max-width: toRem(80);
+        border-radius: 50%;
+        @media(max-width: toEm(600)){
+            max-width: toRem(60);
+        }
+    }
+
+    // .comments__titling
+
+    &__titling {
+        display: flex;
+        gap: toRem(8);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    // .comments__name
+
+    &__name {
+        font-size: toEm(22, 15);
+        font-weight: 500;
+        color: $colorLightGrayishMagenta;
+    }
+
+    // .comments__position
+
+    &__position {
+        font-size: toEm(18, 15);
+        font-weight: 500;
+        color: $colorSoftPink;
+    }
+
+    // .comments__text
+
+    &__text {
+        q{ 
+            font-size: toEm(18, 15);
+            line-height: 1.3;
+            font-weight: 400;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+}
