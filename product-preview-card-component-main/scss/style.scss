@@ -1,0 +1,190 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_functions.scss";
+// Import font in this file because it`s only one font-family
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fraunces:700&display=swap");
+// font fz14
+$mainFont: "Montserrats", sans-serif;
+$secondFont: "Fraunces", sans-serif;
+// colors
+$colorDarkCyan: #3c8067;
+$colorDarkCyanHover: #2f6954;
+$colorCream: #f2ebe3;
+$colorVeryDarkBlue: #1c232b;
+$colorDarkGrayishBlue: #6c7289;
+$colorWhite: #ffffff;
+
+.wrapper{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.wrapper main{
+    flex-grow: 1;
+}
+
+//* container can changes
+[class*="__container"] {
+    max-width: toRem(1600);
+    margin: 0 auto;
+    padding: 0 toRem(15);
+}
+
+body{
+    font-family: $mainFont;
+    min-height: 100%;
+    
+}
+// =========================================================================
+
+
+
+.page {
+    background-color: $colorCream;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 toRem(15);
+    // .page__cart
+
+    &__cart {
+    }
+}
+
+
+.cart {
+    border-radius: toRem(8);
+    font-size: toRem(14);
+    overflow: hidden;
+    background-color: $colorWhite;
+    max-width: toRem(600);
+    @media(max-width: toEm(600)){
+        font-size: toRem(12);
+    }
+
+    // .cart__body
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        @media(max-width: toEm(460)){
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    // .cart__image
+
+    &__image {
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        @media(max-width: toEm(460)){
+            aspect-ratio: 3 /2;
+        }
+    }
+
+    // .cart__content
+
+    &__content {
+        padding: toEm(30, 14);
+        display: flex;
+        gap: toRem(20);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    // .cart__over-title
+
+    &__over-title {
+        font-weight: 500;
+        color: $colorDarkGrayishBlue;
+        text-transform: uppercase;
+        letter-spacing: toRem(2);
+    }
+
+    // .cart__title
+
+    &__title {
+        font-family: $secondFont;
+        font-weight: 700;
+        color: $colorVeryDarkBlue;
+        font-size: toEm(35, 14);
+    }
+
+    // .cart__text
+
+    &__text {
+        p{
+            font-weight: 500;
+            color: $colorDarkGrayishBlue;
+            line-height: 1.4;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    // .cart__prices
+
+    &__prices {
+        display: flex;
+        gap: toRem(15);
+        align-items: center;
+    }
+
+    // .cart__cost
+
+    &__cost {
+        font-size: toEm(35, 14);
+        font-weight: 700;
+        font-family: $secondFont;
+        color: $colorDarkCyan;
+    }
+
+    // .cart__old-cost
+
+    &__old-cost {
+        font-size: toEm(12, 14);
+        font-weight: 500;
+        text-decoration: line-through;
+        color: $colorDarkGrayishBlue;
+    }
+
+    // .cart__icon-button
+
+    &__icon-button{
+        aspect-ratio: 1 /1;
+        object-fit: cover;
+        width: 100%;
+        max-width: toRem(16);
+        
+    }
+
+    // .cart__button
+
+    &__button {
+        background-color: $colorDarkCyan;
+        padding: toRem(10) toRem(25);
+        border-radius: toRem(8);
+        width: 100%;
+        color: $colorWhite;
+        font-weight: 700;
+        text-align: center;
+        transition: background-color 0.3s;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        gap: toRem(15);
+        align-items: center;
+        @media(any-hover:hover){
+            &:hover{
+                background-color: $colorDarkCyanHover;
+            }
+        }
+    }
+}
