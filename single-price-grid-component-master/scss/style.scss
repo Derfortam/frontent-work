@@ -1,0 +1,213 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_functions.scss";
+// Import font in this file because it`s only one font-family
+@import url("https://fonts.googleapis.com/css?family=Karla:regular,700&display=swap");
+// font fz16
+$mainFont: "Karla", sans-serif;
+// colors
+
+$colorCyan: #229997;
+$colorCyanOther: #26b4b2;
+$colorBrightYellow: #c0df34;
+$colorBrightYellowHover:#99b420 ;
+$colorLightGrey: #e5eff5;
+$colorGrayishBlue: #98a6bd;
+$colorGrayish: #adbace;
+
+.wrapper{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.wrapper main{
+    flex-grow: 1;
+}
+
+//* container can changes
+[class*="__container"] {
+    max-width: toRem(1600);
+    margin: 0 auto;
+    padding: 0 toRem(15);
+}
+
+body{
+    font-family: $mainFont;
+    min-height: 100%;
+    background-color: $colorLightGrey;
+}
+
+
+// =========================================================================
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 toRem(15);
+
+    // .page__blank
+
+    &__blank {
+       
+    }
+}
+
+
+
+.blank {
+    font-size: toRem(16);
+    background-color: #fff;
+    border-radius: toRem(8);
+    overflow: hidden;
+    max-width: toRem(600);
+    @media(max-width: toEm(600)){
+        font-size: toRem(14);
+    }
+
+    // .blank__body
+
+    &__body {
+       
+    }
+
+    // .blank__content
+
+    &__content{
+        padding: toEm(20, 16);
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    // .blank__title
+
+    &__title {
+        font-weight: 700;
+        font-size: toEm(20, 16);
+        color: $colorCyan;
+        margin-bottom: toEm(12, 16);
+    }
+
+    // .blank__sub-title
+
+    &__sub-title {
+        font-size: toEm(18, 16);
+        font-weight: 700;
+        color: $colorBrightYellow;
+        margin-bottom: toEm(5, 16);
+    }
+
+    // .blank__text
+
+    &__text {
+        p{
+            line-height: 1.5;
+            color: $colorGrayishBlue;
+            font-weight: 400;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    // .blank__info
+
+    &__info {
+    }
+}
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media(max-width: toEm(450)){
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    // .info__block
+
+    &__block {
+        background-color: $colorCyan;
+        color: $colorLightGrey;
+        padding: toEm(20, 16);
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &--background{
+            background-color: $colorCyanOther;
+        }
+    }
+
+    // .info__title
+
+    &__title {
+        font-weight: 700;
+        font-size: toEm(18, 16);
+        margin-bottom: toEm(15, 16);
+    }
+
+    // .info__price
+
+    &__price {
+        margin-bottom: toEm(10, 16);
+        display: flex;
+        gap: toRem(10);
+        align-items: center;
+    }
+
+    // .info__cost
+
+    &__cost {
+        font-size: toEm(28, 16);
+        font-weight: 700;
+    }
+
+    // .info__per-time
+
+    &__per-time {
+        color: $colorGrayish;
+        font-weight: 400;
+    }
+
+    // .info__description
+
+    &__description {
+        font-weight: 400;
+        font-size: toEm(14, 16);
+        margin-bottom: toEm(15, 16);
+    }
+
+    // .info__sign-up
+
+    &__sign-up {
+        color: $colorLightGrey;
+        font-weight: 400;
+        background-color: $colorBrightYellow;
+        padding: toEm(10, 16);
+        text-align: center;
+        border-radius: toRem(8);
+        width: 100%;
+        transition: background-color 0.3s, color 0.3s;
+        @media(any-hover:hover){
+            &:hover{
+                color: #000;
+                background-color: $colorBrightYellowHover;
+            }
+        }
+    }
+
+    // .info__text
+
+    &__text {
+        p{
+            line-height: 1.5;
+            font-weight: 400;
+            font-size: toEm(14, 16);
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+}
+
