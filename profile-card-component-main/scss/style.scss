@@ -1,0 +1,246 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_functions.scss";
+// Import font in this file because it`s only one font-family
+@import url("https://fonts.googleapis.com/css?family=Kumbh+Sans:regular,700&display=swap");
+// font
+$mainFont: "Kumbh Sans", sans-serif;
+// colors
+
+$colorDarkCyan: #19a2ae;
+$colorVeryDarkBlue: #2d3248;
+$colorDarkGrayish: #6a6f81;
+$colorDarkGrey: #969696;
+
+.wrapper{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.wrapper main{
+    flex-grow: 1;
+}
+
+//* container can changes
+[class*="__container"] {
+    max-width: toRem(1600);
+    margin: 0 auto;
+    padding: 0 toRem(15);
+}
+
+body{
+    font-family: $mainFont;
+    min-height: 100%;
+    background-color: $colorDarkCyan;
+}
+
+
+// =========================================================================
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // .page__card
+
+    &__card {
+    }
+
+    // .page__decoration
+
+    &__decoration {
+        position: fixed;
+        z-index: 1;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        object-fit: cover;
+        max-width: toRem(1300);
+        @media(max-width: toEm(2000)){
+            max-width: toRem(1000);
+        }
+        @media(max-width: toEm(1350)){
+            max-width: toRem(800);
+        }
+    }
+
+    // .page__decoration--top
+
+    &__decoration--top {
+        left: -20%;
+        top: -70%;
+        @media(max-width: toEm(1050)){
+            left: -40%;
+            top: -50%;
+        }
+        @media(max-width: toEm(600)){
+            left: -50%;
+            top: -30%;
+            transform: rotate(90deg);
+        }
+        @media(max-width: toEm(360)){
+            left: -40%;
+            top: -30%;
+        }
+    }
+
+    // .page__decoration--bottom
+
+    &__decoration--bottom {
+        right: -8%;
+        bottom: -90%;
+        @media(max-width: toEm(1050)){
+            right: -40%;
+             bottom: -60%;
+        }
+        @media(max-width: toEm(600)){
+            right: -50%;
+            bottom: -35%;
+        }
+        @media(max-width: toEm(360)){
+            right: -50%;
+            bottom: -25%;
+        }
+    }
+}
+
+.card {
+    position: relative;
+    z-index: 5;
+    max-width: toRem(300);
+    width: 100%;
+    border-radius: toRem(12);
+    overflow: hidden;
+
+    // .card__body
+
+    &__body {
+        background-color: #fff;
+    }
+
+    // .card__main-image
+
+    &__main-image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        aspect-ratio: 1 /1;
+        object-fit: cover;
+        width: 100%;
+        max-width: toRem(100);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: toRem(5) solid #fff;
+    }
+
+    // .card__up
+
+    &__up {
+        height: toRem(140);
+        width: 100%;
+        position: relative;
+    }
+
+    // .card__background
+
+    &__background{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // .card__down
+
+    &__down {
+        position: relative;
+        padding: toRem(70) 0 0;
+    }
+
+    // .card__content
+
+    &__content {
+        padding: 0 toRem(20) toRem(30);
+        border-bottom: toRem(1) solid $colorDarkGrey;
+        display: flex;
+        text-align: justify;
+        gap: toRem(15);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .card__titling
+
+    &__titling {
+        display: inline-flex;
+        gap: toRem(5);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // .card__name
+
+    &__name {
+        font-size: toRem(18);
+        font-weight: 700;
+        color: $colorVeryDarkBlue;
+    }
+
+    // .card__age
+
+    &__age {
+        font-weight: 400;
+        color: $colorDarkGrayish;
+        font-size: toRem(18);
+    }
+
+    // .card__location
+
+    &__location {
+        font-size: toRem(15);
+        font-weight: 400;
+        color: $colorDarkGrayish;
+    }
+
+    // .card__statistic
+
+    &__statistic {
+    }
+}
+
+.statistic {
+    padding: toRem(20);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+
+    // .statistic__block
+
+    &__block {
+        display: flex;
+        gap: toRem(10);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .statistic__title
+
+    &__title {
+        font-weight: 700;
+        color: $colorVeryDarkBlue;
+        font-size: toRem(18);
+    }
+
+    // .statistic__description
+
+    &__description {
+        font-weight: 400;
+        font-size: toRem(10);
+        color: $colorDarkGrayish;
+        letter-spacing: toRem(2);
+    }
+}
