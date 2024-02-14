@@ -1,0 +1,580 @@
+@use "sass:math";
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1627;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+
+
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+@import "_icons.scss";
+
+
+$mainFont: "Poppins", sans-serif;
+$mainColor: #fff;
+$secondColor: #C0C0C0; 
+$thirdColor: #000;
+$thirdHoverColor: #2c2c2c;
+
+.wrapper{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.wrapper main{
+    flex-grow: 1;
+}
+//* container can changes
+[class*="__container"] {
+    max-width: toRem(1198);
+    margin: 0 auto;
+    padding: 0 toRem(15);
+}
+body{
+    font-family: $mainFont;
+}
+
+// компоненти
+@import "_common.scss";
+@import "_header.scss";
+@import "_footer.scss";
+
+// =============================================================
+// =============================================================
+
+.page {
+    padding-top: toRem(100);
+    @media(max-width: toEm(980)){
+        padding-top: toRem(75);
+    }
+    // display: flex;
+    // flex-direction: column;
+    
+    // .page__hero
+
+    &__hero {
+    }
+
+    // .page__specialized
+
+    &__specialized {
+    }
+
+    // .page__image-block
+
+    &__image-block {
+    }
+
+    // .page__tool
+
+    &__tool {
+    }
+
+    // .page__clients
+
+    &__clients {
+    }
+
+    // .page__help
+
+    &__help {
+    }
+}
+
+// ========================================
+
+.hero {
+    @include adaptiveValue("font-size", 18, 14);
+    color: $mainColor;
+    background: url("../img/page/hero/hero.jpg") 0 0 / cover no-repeat;
+    //aspect-ratio: 1440 / 716;
+    // @include adaptiveValue("padding-top", 616, 0);
+    width: 100%;
+    height: 100%;
+    
+    // .hero__container
+
+    &__container {
+        max-width: toRem(1390);
+        margin: 0 auto;
+        padding: 0 toRem(15);
+        padding-bottom: toRem(41);
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+    }
+
+    // .hero__body
+
+    &__body {
+        @include adaptiveValue("padding-top", 616, 60);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 100%;
+         text-align: center;
+         &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    // .hero__over-title
+
+    &__over-title {
+        letter-spacing: toRem(2);
+        color: $secondColor;
+        margin-bottom: toRem(5);
+    }
+
+    // .hero__title
+
+    &__title {
+        @include adaptiveValue("font-size", 58, 28);
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: toRem(20);
+    }
+
+    // .hero__text
+
+    &__text {
+        margin: 0 auto;
+        margin-bottom: toRem(14);
+        max-width: toRem(620);
+        p{
+            line-height: 1.4;
+            color: $secondColor;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    // .hero__block-bottom-info
+
+    &__block-bottom-info {
+        align-self: flex-end;
+        font-size: toEm(16, 18);
+    }
+}
+
+// ========================================
+
+.specialized {
+    font-size: toRem(18);
+    color: $mainColor;
+    padding-top: toEm(122, 18);
+    padding-bottom: toEm(100, 18);
+    background-color: $thirdColor;
+    @media(max-width: toEm(900)){
+        font-size: toRem(16);
+    }
+    @media(max-width: toEm(600)){
+        font-size: toRem(14);
+        padding-top: toEm(60, 18);
+        padding-bottom: toEm(40, 18);
+    }
+
+    &--margin{
+    }
+
+    // .specialized__container
+
+    &__container {
+        text-align: center;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    // .specialized__main-title
+
+    &__main-title {
+        font-size: toEm(40, 18);
+        font-weight: 400;
+        margin-bottom: toEm(15, 18);
+    }
+
+    // .specialized__sub-title
+
+    &__sub-title {
+        font-weight: 400;
+        font-size: toEm(23, 18);
+        color: $secondColor;
+        margin-bottom: toEm(42, 18);
+    }
+
+    // .specialized__box
+
+    &__box {
+        text-align: start;
+        display: flex;
+        gap: toRem(16);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .specialized__block
+
+    &__block {
+        flex-grow: 1;
+        flex-basis: calc(50% - toRem(12));
+        @media(max-width: toEm(610)){
+            flex-basis: 100%;
+        }
+    }
+
+    // .specialized__image
+
+    &__image {
+    }
+
+    // .specialized__content
+
+    &__content {
+        @media(max-width: toEm(600)){
+            padding: toRem(15);
+        }
+    }
+
+    // .specialized__title
+
+    &__title {
+        font-size: toEm(16, 18);
+        &--color{
+            color: $thirdColor;
+        }
+    }
+
+    // .specialized__text
+
+    &__text {
+        p{
+            font-size: toEm(16, 18);
+        }
+        &--color{
+            color: $thirdColor;
+        }
+    }
+
+    // .specialized__link
+
+    &__link {
+    }
+}
+
+// ========================================
+
+.block-image {
+    background: url("../img/page/image-block/sunset.jpg") 0 0 / cover no-repeat;
+    @include adaptiveValue("font-size", 18, 14);
+    color: $mainColor;
+    width: 100%;
+    height: 100%;
+
+    &--background-leaves{
+        background: url("../img/page/image-block/leaves.jpg") 0 0 / cover no-repeat;
+    }
+    &--background-mountain{
+        background: url("../img/page/image-block/mountain.jpg") 0 0 / cover no-repeat;
+    }
+
+    // .block-image__container
+
+    &__container {
+        max-width: toRem(1390);
+        margin: 0 auto;
+        padding: 0 toRem(15);
+        padding-bottom: toRem(40);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        height: 100%;
+        @media(max-width: toEm(900)){
+            padding-bottom: toRem(35);
+        }
+        @media(max-width: toEm(500)){
+            padding-bottom: toRem(25);
+        }
+    }
+
+    // .block-image__body
+
+    &__body{
+        @include adaptiveValue("padding-top", 360, 60);
+        max-width: toRem(380);
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 100%;
+        text-align: left;
+        &:last-child{
+           margin-bottom: 0;
+        }
+        @media(max-width: toEm(900)){
+            max-width: 50%;
+        } 
+        @media(max-width: toEm(400)){
+            max-width: 100%;
+        }
+    }
+
+    // .block-image__title
+
+    &__title {
+        margin-bottom: toRem(5);
+        font-weight: 400;
+    }
+
+    // .block-image__text
+
+    &__text {
+        @include adaptiveValue(" margin-bottom", 250, 30);
+        flex-grow: 1;
+        p{
+            font-weight: 400;
+            line-height: 1.4;
+            color: $secondColor;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    // .block-image__block-bottom-info
+
+    &__block-bottom-info {
+        align-self: flex-end;
+        font-size: toEm(16, 18);
+    }
+}
+
+// ========================================
+
+.tool {
+    background: url("../img/page/tools/img.jpg") 100% / 50%  no-repeat;
+    @include adaptiveValue("font-size", 18, 12);
+    color: $mainColor;
+    background-color: $thirdColor;
+    position: relative;
+    @media(max-width: toEm(820)){
+        background: url("../img/page/tools/img.jpg") 100% / cover  no-repeat;
+        &::before{
+            content: "";
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); 
+        }
+    }
+
+    // .tool__container
+
+    &__container {
+        position: relative;
+        z-index: 2;
+        max-width: toRem(1390);
+        margin: 0 auto;
+        padding: 0 toRem(15);
+        width: 100%;
+        display: flex;
+        gap: toRem(15);
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: toEm(40, 18);
+        
+       // background-color: #000;
+    }
+
+    // .tool__content
+
+    &__content {
+        max-width: 50%;
+        padding-top: toEm(173, 18);
+        padding-bottom: toEm(153, 18);
+        padding-right: toEm(100, 18);
+        &:last-child{
+            margin-bottom: 0;
+        }
+        @media(max-width: toEm(820)){
+            max-width: 100%;
+            padding-right: toEm(40, 18);
+        }
+    }
+
+    // .tool__over-title
+
+    &__over-title {
+        font-weight: 400;
+        color: $secondColor;
+        letter-spacing: toRem(2);
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin-bottom: toEm(6, 18);
+    }
+
+    // .tool__title
+
+    &__title {
+        font-size: toEm(32, 18);
+        font-weight: 400;
+        margin-bottom: toEm(14, 18);
+    }
+
+    // .tool__text
+
+    &__text {
+        margin-bottom: toEm(20, 18);
+        p{
+            font-weight: 400;
+            line-height: 1.3;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    // .tool__button
+
+    &__button {
+    }
+
+    // .tool__block-bottom-info
+
+    &__block-bottom-info {
+        font-size: toEm(16, 18);
+        align-self: flex-end;
+    }
+}
+
+// ========================================
+
+.clients {
+    @include adaptiveValue("font-size", 18, 12);
+    color: $mainColor;
+    background-color: $thirdColor;
+    padding-top: toEm(113, 18);
+    padding-bottom: toEm(100, 18);
+    @media(max-width: toEm(800)){
+        padding-top: toEm(73, 18);
+        padding-bottom: toEm(60, 18);
+    }
+
+    // .clients__container
+
+    &__container {
+        text-align: center;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    // .clients__title
+
+    &__title {
+        font-size: toEm(42, 18);
+        font-weight: 400;
+        margin-bottom: toEm(15, 18);
+    }
+
+    // .clients__sub-title
+
+    &__sub-title {
+        font-size: toEm(26, 18);
+        font-weight: 400;
+        line-height: 1.2;
+        color: $secondColor;
+        margin-bottom: toEm(42, 18);
+    }
+
+    // .clients__list
+
+    &__list {
+        display: flex;
+        gap: toRem(20);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .clients__item
+
+    &__item {
+        font-size: toEm(28, 18);
+        &--size{
+            font-size: toEm(52, 18);
+        }
+    }
+}
+
+// ========================================
+.help {
+    color: $mainColor;
+    @include adaptiveValue("font-size", 18, 14);
+    padding-top: toEm(113, 18);
+    padding-bottom: toEm(103, 18);
+    background-color: $thirdColor;
+    text-align: center;
+    // .help__container
+
+    &__container {
+        &:last-child{
+            margin-bottom: 0;
+        }
+        & *{
+            margin: 0 auto;
+            max-width: toRem(600);
+        }
+    }
+
+    // .help__title
+
+    &__title {
+        font-size: toEm(42, 18);
+        font-weight: 400;
+        margin-bottom: toEm(15, 18);
+        @media(max-width: toEm(600)){
+            font-size: toEm(35, 18);
+        }
+    }
+
+    // .help__sub-title
+
+    &__sub-title {
+        font-size: toEm(26, 18);
+        font-weight: 400;
+        color: $secondColor;
+        margin-bottom: toEm(15, 18);
+    }
+
+    // .help__button
+
+    &__button {
+    }
+}
+
+
+
+
+
+
+
+
+
+
