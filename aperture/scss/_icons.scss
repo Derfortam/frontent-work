@@ -1,0 +1,53 @@
+[class*=" _i-"]::before {
+	display: inline-block;
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+._i-chill:before {
+    content: "\e902";
+  }
+  ._i-compas:before {
+    content: "\e903";
+  }
+  ._i-flower:before {
+    content: "\e904";
+  }
+  ._i-focus-camera:before {
+    content: "\e905";
+  }
+  ._i-hill:before {
+    content: "\e906";
+  }
+  ._i-iso:before {
+    content: "\e907";
+  }
+  ._i-location:before {
+    content: "\e908";
+  }
+  ._i-riksgragsen:before {
+    content: "\e909";
+  }
+  ._i-stock:before {
+    content: "\e90a";
+  }
+  ._i-studio:before {
+    content: "\e90b";
+  }
+  ._i-facebook-social:before {
+    content: "\e900";
+  }
+  ._i-inst:before {
+    content: "\e901";
+  }
+  ._i-twitter:before {
+    content: "\e91a";
+  }
+  
