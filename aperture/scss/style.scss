@@ -1,0 +1,540 @@
+@use "sass:math";
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1627;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+
+
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+@import "_icons.scss";
+
+
+$mainFont: "Poppins", sans-serif;
+$mainColor: #fff;
+$secondColor: #C0C0C0; 
+$thirdColor: #000;
+$thirdHoverColor: #2c2c2c;
+
+.wrapper{
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.wrapper main{
+    flex-grow: 1;
+}
+
+[class*="__container"] {
+    max-width: toRem(1198);
+    margin: 0 auto;
+    padding: 0 toRem(15);
+}
+body{
+    font-family: $mainFont;
+    .menu-open &{
+        overflow: hidden
+    }
+}
+
+// компоненти
+@import "_common.scss";
+@import "_header.scss";
+@import "_footer.scss";
+
+// =============================================================
+.page {
+    // use adaptive value for all sonst-size on the page
+    @include adaptiveValue("font-size", 18, 14);
+    padding-top: toRem(100);
+    @media(max-width: toEm(980)){
+        padding-top: toRem(75);
+    }
+}
+// ========================================
+.hero {
+    color: $mainColor;
+
+    background: url("../img/page/hero/hero.webp") 0 0 / cover no-repeat;
+
+    width: 100%;
+    height: 100%;
+
+    &__container {
+        max-width: toRem(1390);
+        margin: 0 auto;
+        padding: 0 toRem(15) toRem(41);
+        height: 100%;
+
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__body {
+        //use adaptive value for padding (value in functions)
+         @include adaptiveValue("padding-top", 616, 60);
+         width: 100%;
+
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+
+         &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__over-title {
+        color: $secondColor;
+        letter-spacing: toRem(2);
+        margin-bottom: toRem(5);
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 58, 28);
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: toRem(20);
+    }
+
+    &__text {
+        margin: 0 auto;
+        margin-bottom: toRem(14);
+        max-width: toRem(620);
+        p{
+            line-height: 1.4;
+            color: $secondColor;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    &__block-bottom-info {
+        align-self: flex-end;
+        font-size: toEm(16, 18);
+    }
+}
+// ========================================
+.specialized {
+    color: $mainColor;
+    background-color: $thirdColor;
+
+    padding-top: toEm(122, 18);
+    padding-bottom: toEm(100, 18);
+
+    @media(max-width: toEm(900)){
+        font-size: toRem(16);
+    }
+    @media(max-width: toEm(600)){
+        font-size: toRem(14);
+        padding-top: toEm(60, 18);
+        padding-bottom: toEm(40, 18);
+    }
+
+    &__container {
+        text-align: center;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__main-title {
+        font-size: toEm(40, 18);
+        font-weight: 400;
+        margin-bottom: toEm(15, 18);
+    }
+
+    &__sub-title {
+        color: $secondColor;
+
+        font-weight: 400;
+        font-size: toEm(23, 18);
+        margin-bottom: toEm(42, 18);
+    }
+
+    &__box {
+        text-align: start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: toRem(16);
+    }
+
+    &__block {
+        flex-grow: 1;
+        flex-basis: calc(50% - toRem(12));
+
+        min-height: toEm(600, 18);
+        height: 100%;
+        width: 100%;
+
+        object-fit: cover;
+        overflow: hidden;
+        position: relative;
+
+        display: flex;
+        align-items: flex-end;
+
+        @media(any-hover:hover){
+            &:hover{
+                .specialized__image{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        @media(max-width: toEm(610)){
+            flex-basis: 100%;
+            min-height: toEm(450, 18);
+        }
+    }
+
+    &__image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+
+        aspect-ratio: 576 / 600;
+        object-fit: cover;
+
+        transition: transform 0.3s;
+    }
+
+
+    &__content {
+        color: $mainColor;
+
+        position: relative;
+        z-index: 2;
+        bottom: 0;
+        padding: toRem(30);
+        &:last-child{
+            margin-bottom: 0;
+        }
+        @media(max-width: toEm(600)){
+            padding: toRem(15);
+        }
+    }
+
+    &__title {
+        font-size: toEm(16, 18);
+        font-weight: 400;
+        line-height: 1.25;
+
+        margin-bottom: toEm(15, 18);
+        &--color{
+            color: $thirdColor;
+        }
+    }
+
+    &__text {
+        margin-bottom: toEm(20, 18);
+
+        color: $secondColor;
+        p{
+            font-size: toEm(16, 18);
+            font-weight: 400;
+            line-height: 1.25;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+        &--color{
+            color: $thirdColor;
+        }
+    }
+
+}
+// ========================================
+.block-image {
+    background: url("../img/page/image-block/sunset.webp") 0 0 / cover no-repeat;
+    
+    color: $mainColor;
+    
+    width: 100%;
+    height: 100%;
+
+    &--background-leaves{
+        background: url("../img/page/image-block/leaves.webp") 0 0 / cover no-repeat;
+    }
+    &--background-mountain{
+        background: url("../img/page/image-block/mountain.webp") 0 0 / cover no-repeat;
+    }
+
+    &__container {
+        max-width: toRem(1390);
+        margin: 0 auto;
+        padding: 0 toRem(15) toRem(40);
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @media(max-width: toEm(900)){
+            padding-bottom: toRem(35);
+        }
+        @media(max-width: toEm(500)){
+            padding-bottom: toRem(25);
+        }
+    }
+
+
+    &__body{
+       // padding-top: clamp(toRem(60), calc(toRem(16) + 10vw), toRem(360));
+        @include adaptiveValue("padding-top", 360, 60);
+        max-width: toRem(380);
+        width: 100%;
+        height: 100%;
+
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        &:last-child{
+           margin-bottom: 0;
+        }
+        @media(max-width: toEm(900)){
+            max-width: 50%;
+        } 
+        @media(max-width: toEm(550)){
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: toRem(5);
+        font-weight: 400;
+    }
+
+    &__text {
+        //margin-bottom: clamp(toRem(30), calc(toRem(16) + 10vw), toRem(250));
+        @include adaptiveValue("margin-bottom", 250, 30);
+        flex-grow: 1;
+
+        p{
+            font-weight: 400;
+            line-height: 1.4;
+
+            color: $secondColor;
+
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    &__block-bottom-info {
+        align-self: flex-end;
+        font-size: toEm(16, 18);
+    }
+}
+// ========================================
+.tool {
+    background: url("../img/page/tools/img.webp") 100% / 50%  no-repeat;
+    background-color: $thirdColor;
+
+    color: $mainColor;
+
+    position: relative;
+
+    @media(max-width: toEm(820)){
+        background: url("../img/page/tools/img.webp") 100% / cover  no-repeat;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); 
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 2;
+
+        max-width: toRem(1390);
+        margin: 0 auto;
+        padding: 0 toRem(15) toEm(40, 18);
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: toRem(15);
+    }
+
+    &__content {
+        max-width: 50%;
+        padding-top: toEm(173, 18);
+        padding-bottom: toEm(153, 18);
+        padding-right: toEm(100, 18);
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+        @media(max-width: toEm(820)){
+            max-width: 100%;
+            padding-right: toEm(40, 18);
+        }
+    }
+
+    &__over-title {
+        color: $secondColor;
+
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: toRem(2);
+        line-height: 1.2;
+
+        margin-bottom: toEm(6, 18);
+    }
+
+
+    &__title {
+        font-size: toEm(32, 18);
+        font-weight: 400;
+        margin-bottom: toEm(14, 18);
+    }
+
+    &__text {
+        margin-bottom: toEm(20, 18);
+        p{
+            font-weight: 400;
+            line-height: 1.3;
+            &:not(:last-child){
+                margin-bottom: toRem(10);
+            }
+        }
+    }
+
+    &__block-bottom-info {
+        font-size: toEm(16, 18);
+        align-self: flex-end;
+    }
+}
+// ========================================
+.clients {
+    color: $mainColor;
+    background-color: $thirdColor;
+
+    padding-top: toEm(113, 18);
+    padding-bottom: toEm(100, 18);
+
+    @media(max-width: toEm(800)){
+        padding-top: toEm(73, 18);
+        padding-bottom: toEm(60, 18);
+    }
+
+    &__container {
+        text-align: center;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        font-size: toEm(42, 18);
+        font-weight: 400;
+
+        margin-bottom: toEm(15, 18);
+    }
+
+    &__sub-title {
+        color: $secondColor;
+
+        font-size: toEm(26, 18);
+        font-weight: 400;
+        line-height: 1.2;
+
+        margin-bottom: toEm(42, 18);
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: toEm(20, 18);
+    }
+
+    &__item {
+        font-size: toEm(28, 18);
+        &--size{
+            font-size: toEm(52, 18);
+        }
+    }
+}
+// ========================================
+.help {
+    color: $mainColor;
+    background-color: $thirdColor;
+
+    padding-top: toEm(113, 18);
+    padding-bottom: toEm(103, 18);
+    text-align: center;
+
+    @media(max-width: toEm(600)){
+        padding-top: toEm(63, 18);
+        padding-bottom: toEm(53, 18);
+    }
+
+    &__container {
+        &:last-child{
+            margin-bottom: 0;
+        }
+        & *{
+            margin: 0 auto;
+            max-width: toRem(600);
+        }
+    }
+
+    &__title {
+        font-size: toEm(42, 18);
+        font-weight: 400;
+
+        margin-bottom: toEm(15, 18);
+
+        @media(max-width: toEm(600)){
+            font-size: toEm(35, 18);
+        }
+    }
+
+    &__sub-title {
+        color: $secondColor;
+
+        font-size: toEm(26, 18);
+        font-weight: 400;
+        
+        margin-bottom: toEm(15, 18);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
