@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:regular,700,800&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input,
+select {
+  border-radius: 0;
+}
+
+button {
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+address {
+  font-style: normal;
+}
+
+.wrapper {
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+.wrapper main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #dbdbdb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25rem;
+}
+
+.age-calculator {
+  font-size: 3.4375rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem 0.75rem 6.25rem 0.75rem;
+  max-width: 10.9090909091em;
+  padding: 0.5454545455em 1.2727272727em 0.9090909091em 0.5454545455em;
+}
+@media (max-width: 43.5625em) {
+  .age-calculator {
+    padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+    font-size: 1.875rem;
+  }
+}
+.age-calculator__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4545454545em;
+  position: relative;
+  padding: 0 1.8181818182em 1.875rem 0;
+  border-bottom: 1px solid #141414;
+}
+@media (max-width: 43.5625em) {
+  .age-calculator__inputs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 0 3.125rem 0;
+  }
+}
+.age-calculator__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 1rem;
+  color: #716f6f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.age-calculator__input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #141414;
+  height: 3.125rem;
+  padding: 0 0.625rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+.age-calculator__input:focus {
+  border: 1px solid #854dff;
+}
+.age-calculator__button {
+  background-color: #141414;
+  padding: 0.3636363636em;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+}
+.age-calculator__output {
+  padding: 0.9090909091em 0.5454545455em 0 0;
+}
+.age-calculator__answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+}
+.age-calculator__data {
+  color: #854dff;
+  font-weight: 800;
+  font-size: 1em;
+}
+.age-calculator__name {
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.age-calculator__input::-webkit-outer-spin-button,
+.age-calculator__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.age-calculator__input {
+  -moz-appearance: textfield;
+}
+
+.error-data {
+  font-size: 0.625rem;
+  color: red;
+  font-style: italic;
+  letter-spacing: 0;
+}

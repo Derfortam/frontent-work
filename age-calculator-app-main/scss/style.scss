@@ -1,0 +1,146 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+
+$primaryMain: #854dff;
+$primarySecond: #ff5757;
+
+$neutralFirst: #ffffff;
+$neutralSecond: #f0f0f0;
+$neutralThird: #dbdbdb;
+$neutralFourth: #716f6f;
+$neutralFifth: #141414;
+
+$mainFont: "Poppins", sans-serif;
+
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.wrapper main {
+   flex-grow: 1;
+}
+[class*="__container"] {
+   max-width: toRem(1200);
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}
+body {
+   font-family: $mainFont;
+   background-color: $neutralThird;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   padding: toRem(20);
+}
+
+.age-calculator {
+   font-size: toRem(55);
+   background-color: $neutralFirst;
+   border-radius: toRem(12) toRem(12) toRem(100) toRem(12);
+   max-width: toEm(600, 55);
+   padding: toEm(30, 55) toEm(70, 55) toEm(50, 55) toEm(30, 55);
+   @media (max-width: toEm(697)) {
+      padding: toRem(30) toRem(30) toRem(40) toRem(30);
+      font-size: toRem(30);
+   }
+   &__inputs {
+      display: flex;
+      align-items: center;
+      gap: toEm(25, 55);
+
+      position: relative;
+
+      padding: 0 toEm(100, 55) toRem(30) 0;
+      border-bottom: 1px solid $neutralFifth;
+      @media (max-width: toEm(697)) {
+         flex-wrap: wrap;
+         padding: 0 0 toRem(50) 0;
+      }
+   }
+
+   &__label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(10);
+
+      font-size: toRem(16);
+      color: $neutralFourth;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+   }
+
+   &__input {
+      width: 100%;
+      border-radius: toRem(6);
+      border: 1px solid $neutralFifth;
+      height: toRem(50);
+      padding: 0 toRem(10);
+      font-size: toRem(30);
+      font-weight: 600;
+      &:focus {
+         border: 1px solid $primaryMain;
+      }
+   }
+
+   &__button {
+      background-color: $neutralFifth;
+      padding: toEm(20, 55);
+      border-radius: 50%;
+
+      position: absolute;
+
+      right: 0;
+      bottom: 0;
+
+      transform: translateY(50%);
+   }
+
+   &__output {
+      padding: toEm(50, 55) toEm(30, 55) 0 0;
+   }
+
+   &__answer {
+      display: flex;
+      align-items: center;
+      gap: toRem(10);
+   }
+
+   &__data {
+      color: $primaryMain;
+      font-weight: 800;
+      font-size: toEm(55, 55);
+   }
+
+   &__name {
+      font-size: toEm(55, 55);
+      font-weight: 800;
+   }
+}
+
+.age-calculator__input::-webkit-outer-spin-button,
+.age-calculator__input::-webkit-inner-spin-button {
+   // @media (min-width: toEm(797)) {
+   -webkit-appearance: none;
+   margin: 0;
+   // }
+}
+.age-calculator__input {
+   // @media (min-width: toEm(797)) {
+   -moz-appearance: textfield;
+   // }
+}
+
+.error-data {
+   // display: none;
+   font-size: toRem(10);
+   color: red;
+   font-style: italic;
+   letter-spacing: 0;
+}
