@@ -48,6 +48,7 @@
       object-fit: cover;
       flex-grow: 0;
       flex-shrink: 0;
+      max-width: toRem(140);
       @include adaptiveValue("flex-basis", 140, 80);
       //@include adaptiveValue("flex-basis", 199, 116);
    }
