@@ -312,7 +312,7 @@ const tabcontentForBookSectionTwo = document.querySelector("#Tab2")
 const oldPlaceForBookSectionTwo = document.querySelector(".page__book-section")
 if ((window, innerWidth <= 820)) {
    // tabcontentForBookSectionTwo.insertAdjacentElement("beforeend", bookSectionTwo)
-   tabcontentForBookSectionTwo.appendChild(bookSectionTwo)
+  if(tabcontentForBookSectionTwo) tabcontentForBookSectionTwo.appendChild(bookSectionTwo)
 }
 if (bookSectionTwo && tabcontentForBookSectionTwo && oldPlaceForBookSectionTwo) {
    const bookSectionBeak = `(max-width: 820px)`
