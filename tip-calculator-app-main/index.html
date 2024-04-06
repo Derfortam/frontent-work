@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+
+
+
+
+  <div class="calculator">
+    <div class="calculator__inputs inputs">
+      <label class="inputs__label">
+        <p id="bill-label" class="inputs__sub-name"> <span clas="inputs__text">Bill</span></p>
+        <input id="bill" type="number" class="inputs__info">
+        <div class="inputs__icon _icon-icon-dollar"></div>
+      </label>
+      <label class="inputs__label">
+        Select Tip %</label>
+      <div class="inputs__tips">
+        <button class="inputs__tip">5%</button>
+        <button class="inputs__tip active">10%</button>
+        <button class="inputs__tip">15%</button>
+        <button class="inputs__tip">25%</button>
+        <button class="inputs__tip">50%</button>
+        <input type="text" placeholder="Custom" class="inputs__tip inputs__tip--custom">
+      </div>
+      <label class="inputs__label">
+        <p id="people-label" class="inputs__sub-name"> <span clas="inputs__text">Number of People </span></p>
+        <input id="people" type="number" class="inputs__info">
+        <div class="inputs__icon _icon-icon-person"></div>
+      </label>
+    </div>
+    <div class="calculator__outputs outputs">
+      <div class="outputs__block outputs__block--margin">
+        <div class="outputs__name">
+          <h3 class="outputs__title">Tip Amount</h3>
+          <h5 class="outputs__sub-title">/ person</h5>
+        </div>
+        <div id="tipAmount" class="outputs__price _icon-icon-dollar">0.00</div>
+      </div>
+      <div class="outputs__block  ">
+        <div class="outputs__name">
+          <h3 class="outputs__title">Total</h3>
+          <h5 class="outputs__sub-title">/ person</h5>
+        </div>
+        <div id="total" class="outputs__price _icon-icon-dollar">0.00</div>
+      </div>
+      <button class="outputs__reset">Sum</button>
+    </div>
+
+  </div>
+
+  <!-- 
+  <div class="checkbox">
+    <input name="checkbox" id="check" type="checkbox" class="checkbox__input">
+    <label for="check" class="checkbox__label">
+      15%
+    </label>
+  </div> -->
+
+  <!-- <div class="checkbox">
+    <input name="checkbox" id="check" type="checkbox" class="checkbox__input">
+    <label for="check" class="checkbox__label">
+      15%
+    </label>
+
+  </div> -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

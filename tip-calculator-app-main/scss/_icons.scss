@@ -1,0 +1,21 @@
+[class*="_icon-"]::before {
+   display: inline-block;
+   font-family: "icons";
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   line-height: 1;
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-icon-dollar:before {
+   content: "\e900";
+}
+._icon-icon-person:before {
+   content: "\e901";
+}
+._icon-logo:before {
+   content: "\e902";
+}

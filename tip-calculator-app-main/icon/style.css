@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('fonts/icons.eot?ew435r');
+  src:  url('fonts/icons.eot?ew435r#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?ew435r') format('truetype'),
+    url('fonts/icons.woff?ew435r') format('woff'),
+    url('fonts/icons.svg?ew435r#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"], [class*=" _icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-icon-dollar:before {
+  content: "\e900";
+}
+._icon-icon-person:before {
+  content: "\e901";
+}
+._icon-logo:before {
+  content: "\e902";
+}
