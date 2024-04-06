@@ -1,0 +1,103 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+
+$mainFont: "Manrope", sans-serif;
+$primaryFirstColor: #cee3e9;
+$primarySecondColor: #52ffa8;
+
+$neutralFirstColor: #4e5d73;
+$neutralSecondColor: #323a49;
+$neutraThirdColor: #1f2632;
+
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.wrapper main {
+   flex-grow: 1;
+}
+[class*="__container"] {
+   max-width: toRem(1200);
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}
+body {
+   background-color: $neutraThirdColor;
+   font-family: $mainFont;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   padding: toRem(20);
+}
+
+.advice {
+   font-size: toRem(14);
+   @media (max-width: toEm(600)) {
+      font-size: toRem(12);
+   }
+
+   background-color: $neutralSecondColor;
+   padding: toEm(35, 14) toEm(30, 14) toEm(70, 14);
+   max-width: toRem(600);
+   border-radius: toEm(12, 14);
+
+   display: flex;
+   flex-direction: column;
+   gap: toEm(25, 14);
+   align-items: center;
+
+   position: relative;
+
+   &__label {
+      text-transform: uppercase;
+      color: $primarySecondColor;
+
+      letter-spacing: 3px;
+   }
+
+   &__text {
+      p {
+         line-height: 1.4;
+         color: #fff;
+         font-size: toEm(26, 14);
+         font-weight: 800;
+         text-align: center;
+      }
+   }
+
+   &__icon {
+      width: 100%;
+   }
+
+   &__generate {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+
+      padding: toRem(15);
+      border-radius: 50%;
+
+      background-color: $primarySecondColor;
+
+      transition: box-shadow 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: 0 0 20px 5px $primarySecondColor;
+         }
+      }
+   }
+
+   &__icon-generate {
+      aspect-ratio: 1 /1;
+      width: 100%;
+      height: 100%;
+      max-width: toEm(28, 14);
+   }
+}
