@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Frontend Mentor | Interactive pricing component</title>
+</head>
+
+<body>
+  <main class="page">
+    <img src="images/bg-pattern.svg" alt="icon" class="background-icon">
+
+    <div class="traffic-header">
+      <h2 class="traffic-header__title">Simple, traffic-based prising</h2>
+      <div class="traffic-header__text">
+        <p>Sign-up for our 30-day trial. No credit card required</p>
+      </div>
+      <img src="images/pattern-circles.svg" alt="circles" class="traffic-header__icon">
+    </div>
+
+    <div class="traffic">
+      <div class="traffic__input-block">
+        <div class="traffic__info">
+          <div id="trafficPageviews" class="traffic__pageviews">10K PAGEviews</div>
+          <div class="traffic__pricing">
+            <span class="traffic__price" id="slider-value">$8</span> / month
+          </div>
+        </div>
+
+        <input id="slider" type="range" class="traffic__input" step="250" value="0" min="0" max="1000">
+
+        <div class="traffic__mode">
+          <span class="traffic__label-mode"> Monthly Billing</span>
+          <button class="traffic__button"></button>
+          <span class="traffic__label-mode traffic__label-mode--action">Yearly Billing <span class="traffic__promotion">
+              25%
+              discount</span></span>
+        </div>
+      </div>
+
+      <div class="traffic__more">
+        <ul class="traffic__list">
+          <li class="traffic__item">Unlimited websites</li>
+          <li class="traffic__item">100% data ownerships</li>
+          <li class="traffic__item">Email reports</li>
+        </ul>
+        <button class="traffic__trial">Start my trial</button>
+      </div>
+    </div>
+  </main>
+  <!-- Simple, traffic-based pricing
+  Sign-up for our 30-day trial. No credit card required.
+
+  Pageviews
+  $ /month
+
+  Monthly Billing
+  Yearly Billing 25% discount
+
+  Unlimited websites
+  100% data ownership
+  Email reports
+
+  Start my trial -->
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

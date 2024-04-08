@@ -1,0 +1,282 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+
+$mainFont: "Manrope", sans-serif;
+$fullSliderBarColor: #a6f2eb;
+$sliderBackgroundColor: #10d5c2;
+$discountBackgroundColor: #feece7;
+$discountTextColor: #ff8c66;
+$textColor: #bdccff;
+
+$pricingBackgroundColor: #ffffff;
+$mainBackgroundColor: #fafbff;
+$emptySliderColor: #eaeefb;
+$toggleBackgroundColor: #cdd7ee;
+$secondTextColor: #858fad;
+$textBackgroundColor: #293356;
+
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.wrapper main {
+   flex-grow: 1;
+}
+[class*="__container"] {
+   max-width: toRem(1200);
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}
+body {
+}
+.page {
+   font-family: $mainFont;
+   background-color: $mainBackgroundColor;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: toRem(80);
+   padding: toRem(20);
+
+   width: 100%;
+   min-height: 100%;
+   overflow-y: auto;
+}
+.background-icon {
+   position: fixed;
+   right: 0;
+   top: 0;
+   z-index: 1;
+   width: 100%;
+}
+.traffic-header {
+   position: relative;
+   z-index: 3;
+   font-size: toRem(16);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: toRem(15);
+
+   &__title {
+      font-size: toEm(25, 16);
+      font-weight: 800;
+      color: $textBackgroundColor;
+      position: relative;
+      z-index: 3;
+   }
+
+   &__text {
+      font-size: toEm(16, 16);
+      color: $secondTextColor;
+      position: relative;
+      z-index: 3;
+   }
+
+   &__icon {
+      position: absolute;
+      width: toEm(150, 16);
+      height: toEm(150, 16);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+   }
+}
+
+.traffic {
+   position: relative;
+   z-index: 3;
+   background-color: $pricingBackgroundColor;
+
+   font-size: toRem(18);
+   border-radius: toRem(8);
+
+   max-width: toRem(600);
+   width: 100%;
+
+   box-shadow: 3px 10px 10px 1px $secondTextColor;
+
+   &__input-block {
+      display: flex;
+      flex-direction: column;
+      gap: toEm(60, 18);
+      padding: toEm(40, 18);
+      border-bottom: 1px solid $emptySliderColor;
+   }
+
+   &__info {
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   &__pageviews {
+      text-transform: uppercase;
+      color: $secondTextColor;
+      font-weight: 800;
+      font-size: toEm(22, 18);
+   }
+
+   &__pricing {
+      color: $secondTextColor;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+      font-size: toEm(22, 18);
+   }
+
+   &__price {
+      color: $textBackgroundColor;
+      font-size: toEm(52, 18);
+      font-weight: 800;
+   }
+
+   &__input {
+      appearance: none;
+      width: 100%;
+      background-color: $secondTextColor;
+      border-radius: toRem(100);
+      height: toRem(10);
+      &::-webkit-slider-thumb {
+         appearance: none;
+         width: toRem(60);
+         height: toRem(60);
+         background: url("../images/icon-slider.svg") 50% 50% / 40px no-repeat, $sliderBackgroundColor;
+         border: none;
+         border-radius: 50%;
+         cursor: pointer;
+         display: block;
+         box-shadow: 0px 20px 60px 0.3px $sliderBackgroundColor;
+      }
+      &::-moz-range-thumb {
+         width: toRem(60);
+         height: toRem(60);
+         background: url("../images/icon-slider.svg") 50% 50% / 40px no-repeat, $sliderBackgroundColor;
+         border: none;
+         border-radius: 50%;
+         cursor: pointer;
+         display: block;
+         box-shadow: 0px 20px 60px 0.3px $sliderBackgroundColor;
+      }
+   }
+
+   &__mode {
+      display: flex;
+      align-items: center;
+      gap: toEm(10, 18);
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   &__label-mode {
+      color: $secondTextColor;
+      font-size: toEm(16, 18);
+      font-weight: 600;
+   }
+
+   &__button {
+      width: toRem(60);
+      height: toRem(30);
+      border-radius: toRem(100);
+      padding: toRem(2);
+      position: relative;
+      background-color: $secondTextColor;
+      &::before {
+         content: "";
+         width: toRem(24);
+         height: toRem(24);
+         border-radius: 50%;
+         background-color: $mainBackgroundColor;
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         left: toRem(2);
+         transition: all 0.3s;
+      }
+      &.active {
+         &::before {
+            left: 100%;
+            transform: translate(-100%, -50%);
+            margin-left: toRem(-2);
+            transition: all 0.3s;
+            background-color: $discountTextColor;
+         }
+      }
+   }
+
+   &__label-mode--action {
+      display: inline-flex;
+      gap: toRem(10);
+      flex-wrap: wrap;
+      align-items: center;
+   }
+
+   &__promotion {
+      font-size: toEm(14, 18);
+      padding: toRem(4);
+      border-radius: toRem(8);
+      font-weight: 800;
+
+      color: $discountTextColor;
+      background-color: $discountBackgroundColor;
+   }
+
+   &__more {
+      padding: toEm(40, 18);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: toRem(10);
+      flex-wrap: wrap;
+   }
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toEm(15, 18);
+   }
+
+   &__item {
+      color: $secondTextColor;
+      font-size: toEm(16, 18);
+      font-weight: 600;
+
+      display: inline-flex;
+      align-items: center;
+      gap: toRem(10);
+      &::before {
+         content: "";
+         width: toRem(9);
+         height: toRem(8);
+         background: url("../images/icon-check.svg") 0 0 / cover no-repeat;
+      }
+   }
+
+   &__trial {
+      color: $textColor;
+      padding: toEm(20, 18) toEm(40, 18);
+      max-width: toRem(230);
+      width: 100%;
+      border-radius: toRem(100);
+      text-align: center;
+      font-size: toEm(16, 18);
+      background-color: $textBackgroundColor;
+      transition: background-color 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $secondTextColor;
+         }
+      }
+   }
+}
