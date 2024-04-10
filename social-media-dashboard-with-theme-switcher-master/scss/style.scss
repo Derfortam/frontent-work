@@ -1,0 +1,336 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+@import "_icons.scss";
+
+$mainFont: "Inter", sans-serif;
+$firstAccentColor: #1db489;
+$secondAccentColor: #dc414c;
+
+$facebookColor: #198ff5;
+$twitterColor: #1ca0f2;
+// $instagramColor: linear gradient #fdc468 to #df4996;
+$firstInstagramColor: #fdc468;
+$secondInstagramColor: #df4996;
+// $instagramColor: #df4996;
+
+$youtubeColor: #c4032a;
+
+:root {
+   // --darkTheme: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+   // --lightTheme: #aeb3cb;
+   // --mainTheme: linear gradient #378fe6 to #3eda82;
+   --firstButtonColor: #378fe6;
+   --secondButtonColor: #3eda82;
+
+   --mainTheme: #1e202a;
+   --backgroundColor: #1e202a;
+   --topBGPattern: #1f212e;
+   --cardBG: #252a41;
+   --firstTextColor: #8b97c6;
+   --secondTextColor: #ffffff;
+}
+
+// day
+.white {
+   --mainTheme: #ffffff;
+
+   --backgroundColor: #ffffff;
+   --topBGPattern: #f5f7ff;
+   --cardBG: #f0f2fa;
+   --firstTextColor: #63687e;
+   --secondTextColor: #1e202a;
+}
+
+// .element {
+//    color: var(--main-color);
+//    background-color: var(--secondary-color);
+//  }
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.wrapper main {
+   flex-grow: 1;
+}
+[class*="__container"] {
+   max-width: toRem(1200);
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}
+body {
+   background-color: var(--mainTheme);
+   color: var(--secondTextColor);
+
+   font-family: $mainFont;
+}
+
+.page {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100%;
+   padding: toRem(20);
+}
+
+.dashboard {
+   max-width: toRem(1500);
+   width: 100%;
+   font-size: toRem(18);
+
+   display: flex;
+   flex-direction: column;
+   gap: toRem(40);
+
+   &__preview {
+      display: flex;
+      gap: toRem(15);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__titling {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(5);
+   }
+
+   &__title {
+      font-size: toEm(30, 18);
+      font-weight: 700;
+   }
+
+   &__sub-title {
+      color: var(--firstTextColor);
+      font-size: toEm(16, 18);
+   }
+
+   &__mode {
+      color: var(--firstTextColor);
+      font-size: toEm(16, 18);
+      display: inline-flex;
+      gap: toRem(10);
+      align-items: center;
+      font-weight: 700;
+   }
+
+   &__button-mode {
+      width: toRem(80);
+      border-radius: toRem(100);
+      height: toRem(40);
+      background: linear-gradient(to right, var(--firstButtonColor), var(--secondButtonColor));
+
+      position: relative;
+
+      &::before {
+         content: "";
+         position: absolute;
+         width: toRem(30);
+         height: toRem(30);
+         top: 50%;
+         left: toRem(4);
+         transform: translateY(-50%);
+         background-color: var(--backgroundColor);
+         border-radius: 50%;
+         transition: all 0.3s;
+      }
+      &.active {
+         background: var(--firstTextColor);
+
+         &::before {
+            left: 100%;
+            transform: translate(-100%, -50%);
+            margin-left: toRem(-4);
+         }
+      }
+   }
+}
+.social-media {
+   font-size: toRem(18);
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(toRem(290), 1fr));
+   gap: toRem(20);
+
+   &__block {
+      flex-grow: 1;
+      & > *:last-child {
+         margin-bottom: toRem(0);
+      }
+      position: relative;
+      border-radius: toRem(6);
+      overflow: hidden;
+      padding: toEm(30, 18);
+      background-color: var(--cardBG);
+      text-align: center;
+      &::before {
+         content: "";
+         width: 100%;
+         height: toRem(6);
+         left: 0;
+         top: 0;
+         position: absolute;
+      }
+      &--first-color {
+         &::before {
+            background-color: $facebookColor;
+         }
+      }
+      &--second-color {
+         &::before {
+            background: linear-gradient(to right, $firstInstagramColor, $secondInstagramColor);
+         }
+      }
+      &--third-color {
+         &::before {
+            background-color: $youtubeColor;
+         }
+      }
+   }
+
+   &__link {
+      font-size: toEm(16, 18);
+      color: var(--firstTextColor);
+      display: inline-flex;
+      gap: toRem(5);
+      align-items: center;
+      margin-bottom: toRem(30);
+      &::before {
+         font-size: toEm(36, 18);
+      }
+      &--color-facebook {
+         &::before {
+            color: $facebookColor;
+         }
+      }
+      &--color-instagram {
+         &::before {
+            background: linear-gradient(to right, $firstInstagramColor, $secondInstagramColor);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+         }
+      }
+      &--color-youtube {
+         &::before {
+            color: $youtubeColor;
+         }
+      }
+   }
+
+   &__followers {
+      font-size: toEm(50, 18);
+      font-weight: 700;
+      margin-bottom: toRem(10);
+   }
+
+   &__name {
+      font-size: toEm(20, 18);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--firstTextColor);
+      margin-bottom: toRem(30);
+   }
+
+   &__status {
+      color: $firstAccentColor;
+      display: inline-flex;
+      gap: toRem(3);
+      align-items: center;
+      &--down {
+         color: $secondAccentColor;
+      }
+   }
+}
+
+.overview {
+   display: flex;
+   flex-direction: column;
+   gap: toRem(40);
+
+   font-size: toRem(18);
+   &__title {
+      font-size: toEm(24, 18);
+      font-weight: 800;
+   }
+
+   &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(toRem(290), 1fr));
+      gap: toRem(20);
+   }
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(30);
+      border-radius: toRem(6);
+      overflow: hidden;
+      padding: toEm(30, 18);
+      background-color: var(--cardBG);
+   }
+
+   &__criterion {
+      display: flex;
+      gap: toRem(10);
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      color: var(--firstTextColor);
+      font-size: toEm(16, 18);
+
+      &::before {
+         font-size: toEm(20, 18);
+      }
+
+      &--color-facebook {
+         &::before {
+            color: $facebookColor;
+         }
+      }
+      &--color-instagram {
+         &::before {
+            background: linear-gradient(to right, $firstInstagramColor, $secondInstagramColor);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+         }
+      }
+      &--color-twitter {
+         &::before {
+            color: $twitterColor;
+         }
+      }
+      &--color-youtube {
+         &::before {
+            color: $youtubeColor;
+         }
+      }
+   }
+
+   &__statistic {
+      display: flex;
+      gap: toRem(10);
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__num {
+      font-size: toEm(35, 18);
+      font-weight: 800;
+   }
+
+   &__status {
+      color: $firstAccentColor;
+      display: inline-flex;
+      align-items: center;
+      gap: toRem(10);
+      &--down {
+         color: $secondAccentColor;
+      }
+   }
+}
