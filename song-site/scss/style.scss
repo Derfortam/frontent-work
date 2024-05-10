@@ -1,0 +1,199 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+
+$mainColor: #190019;
+$secondMainColor: #0a050a;
+
+$secondColor: #292c35;
+$infoColor: #e09145;
+$textColor: #fcd9b8;
+$mainFont: "Poppins", sans-serif;
+
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.wrapper main {
+   flex-grow: 1;
+}
+//* container can changes
+[class*="__container"] {
+   max-width: toRem(1259);
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}
+body {
+   font-family: $mainFont;
+   color: $textColor;
+}
+
+.header {
+   position: fixed;
+   padding: toRem(20);
+   z-index: 60;
+   left: 0;
+   top: 0;
+   width: 100%;
+   background-color: #000;
+   &__search-wrapper {
+   }
+
+   &__search {
+      width: 100%;
+      padding: toRem(5) toRem(20);
+      border-radius: toRem(8);
+      background-color: $mainColor;
+      border: 1px solid $infoColor;
+      color: $infoColor;
+      &::placeholder {
+         opacity: 1;
+      }
+   }
+}
+
+.page {
+   position: relative;
+   padding: toRem(20);
+   // z-index: 2;
+   font-size: toRem(22);
+   display: flex;
+   flex-direction: column;
+   gap: toRem(15);
+   padding-top: toRem(80);
+   &__cards {
+   }
+}
+.cards {
+   // display: flex;
+   // flex-direction: column;
+   gap: toRem(10);
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(toRem(220), 1fr));
+   // grid-template-columns: repeat(2, 1fr);
+
+   // @media (max-width: toEm(450)) {
+   //    grid-template-columns: repeat(auto-fill, minmax(toRem(250), 1fr));
+   // }
+   &__item {
+      color: $mainColor;
+      transition: all 0.3s;
+      background-color: rgba($textColor, $alpha: 1);
+      // border-radius: toRem(40) 0 toRem(40) 0;
+      overflow: hidden;
+      border: 2px solid $infoColor;
+      &--basic {
+         background-color: $secondMainColor;
+         color: $infoColor;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: rgba($textColor, $alpha: 0.6);
+         }
+      }
+   }
+   &__link {
+      padding: toRem(10) toRem(10);
+      display: flex;
+      // flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(5);
+      width: 100%;
+      @media (min-width: toEm(500)) {
+         padding: toRem(12) toRem(20);
+         gap: toRem(15);
+      }
+   }
+
+   &__number {
+      font-size: toRem(26);
+      font-weight: 600;
+      border: 1px solid $infoColor;
+      padding: toRem(10);
+      border-radius: 50%;
+      aspect-ratio: 1/ 1;
+      width: 100%;
+      width: toRem(50);
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: toEm(500)) {
+         font-size: toRem(20);
+         color: $infoColor;
+         background-color: $mainColor;
+      }
+   }
+
+   &__title {
+      @media (max-width: toEm(500)) {
+         font-size: toRem(18);
+      }
+   }
+}
+.song {
+   // background-color: $secondMainColor;
+   // color: $textColor;
+   background-color: $textColor;
+   color: $secondMainColor;
+   padding: toRem(25);
+
+   width: 100%;
+   height: 100%;
+   display: none;
+   left: 0;
+   top: 0;
+   font-size: toRem(26);
+   overflow: auto;
+   z-index: 100;
+   position: fixed;
+   &.active {
+      display: block;
+      z-index: 100;
+      // position: fixed;
+   }
+
+   @media (max-width: toEm(600)) {
+      font-size: toRem(18);
+   }
+   p {
+      line-height: 1.5;
+      text-align: justify;
+      font-weight: 400;
+      &:not(:last-child) {
+         margin-bottom: toRem(10);
+      }
+   }
+   &.active {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(20);
+   }
+   span {
+      font-weight: 600;
+   }
+   i {
+      font-weight: 500;
+   }
+   &__button {
+      background-color: $infoColor;
+      border-radius: toRem(15) toRem(30);
+      padding: toRem(15) toRem(25);
+      font-size: toRem(16);
+      color: $secondColor;
+      align-self: flex-end;
+   }
+}
+
+.background {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   object-fit: cover;
+   filter: blur(2px);
+}
