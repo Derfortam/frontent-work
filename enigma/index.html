@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<!-- zxx -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home Page</title>
+  <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+</head>
+
+<body class="dark">
+  <div class="wrapper">
+    <main class="page" id="app">
+
+      <div class="message" id="message">
+        Copy Sucsses
+      </div>
+
+      <div class="page__container">
+        <h1 class="page__title">Enigma core</h1>
+        <h3 class="page__sub-title">Solve secret messages from your allies or spies</h3>
+        <div class="page__block block">
+          <h4 class="block__mark">Wheels positions (encrypt message):</h4>
+          <div class="block__wheels">
+            <label><input type="number" required id="wheel1" placeholder="Enter value (1 - 26)"></label>
+            <label> <input type="number" required id="wheel2" placeholder="Enter value (1 - 26)"></label>
+            <label><input type="number" required id="wheel3" placeholder="Enter value (1 - 26)"></label>
+          </div>
+          <h4 class="block__mark">Your message:</h4>
+          <div class="block__place">
+            <textarea type="text" id="inputText" placeholder="Enter " class="block__input"></textarea>
+            <button id="generate" class="block__button">Get</button>
+            <div id="generateOutput" class="block__output">Result...</div>
+            <button id="copyEncrypt" class="block__button">Copy</button>
+          </div>
+        </div>
+
+
+        <div class="page__block block">
+          <h4 class="block__mark">Wheels positions (decrypt message):</h4>
+          <div class="block__wheels">
+            <label> <input type="number" required id="wheel4" placeholder="Enter value (1 - 26)"></label>
+            <label> <input type="number" required id="wheel5" placeholder="Enter value (1 - 26)"></label>
+            <label><input type="number" required id="wheel6" placeholder="Enter value (1 - 26)"></label>
+          </div>
+          <h4 class="block__mark">Your message:</h4>
+          <div class="block__place">
+            <textarea type="text" id="inputText2" placeholder="Enter... " class="block__input"></textarea>
+            <button id="generate2" class="block__button">Get</button>
+            <div id="generateOutput2" class="block__output">Result...</div>
+            <button id="copyDecrypt" class="block__button">Copy</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
