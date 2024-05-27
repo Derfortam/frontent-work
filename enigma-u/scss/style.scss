@@ -1,0 +1,234 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_fonts.scss";
+@import "_functions.scss";
+.wrapper {
+   overflow: clip;
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.wrapper main {
+   flex-grow: 1;
+}
+
+//* container can changes
+[class*="__container"] {
+   max-width: toRem(1259);
+   margin: 0 auto;
+   padding: 0 toRem(15);
+}
+
+$mainFont: "Phudu", sans-serif;
+$secondFont: "Anta", sans-serif;
+
+body {
+   font-family: $mainFont;
+   background: url("../img/back3.jpg") 0 0 / cover repeat;
+   color: #fff;
+}
+
+.page {
+   padding: toRem(150) 0;
+   font-size: toRem(30);
+   font-weight: 400;
+   @media (max-width: toEm(797)) {
+      padding: toRem(50) 0;
+   }
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+
+   &__container {
+      text-align: center;
+   }
+
+   &__title {
+      font-family: $secondFont;
+      font-size: toRem(60);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: toRem(20);
+      // animation: flyimg 3s ease infinite;
+      animation: 6s ease-in infinite reverse flying;
+      position: relative;
+      display: inline-block;
+      &::before {
+         content: "";
+         position: absolute;
+         width: 70%;
+         height: toRem(3);
+         background-color: #ffd000;
+         right: 0;
+         border-radius: toRem(4);
+         bottom: 0;
+      }
+      @media (max-width: toEm(500)) {
+         font-size: toRem(35);
+      }
+   }
+
+   &__sub-title {
+      font-size: toRem(20);
+      margin-bottom: toRem(30);
+   }
+
+   &__block {
+   }
+}
+
+@keyframes flying {
+   0% {
+      transform: translate(0%, 0%);
+   }
+   25% {
+      transform: translate(10%, 20%);
+   }
+   50% {
+      transform: translate(0%, 0%);
+   }
+   75% {
+      transform: translate(-10%, 20%);
+   }
+   100% {
+      transform: translate(0%, 0%);
+   }
+}
+
+.block {
+   &:not(:last-child) {
+      margin-bottom: toRem(40);
+      border-bottom: 1px solid #fff;
+      padding-bottom: toRem(30);
+   }
+   text-align: left;
+   display: flex;
+   flex-direction: column;
+   gap: toRem(10);
+
+   &__mark {
+      margin-bottom: toRem(10);
+      text-transform: uppercase;
+   }
+
+   &__wheels {
+      margin-bottom: toRem(20);
+      display: grid;
+      gap: toRem(20);
+      grid-template-columns: repeat(3, 1fr);
+      @media (max-width: toEm(850)) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: toEm(560)) {
+         grid-template-columns: repeat(1, 1fr);
+      }
+      label {
+         display: flex;
+         flex-direction: column;
+         gap: toRem(5);
+         font-size: toRem(16);
+         color: #ff0000;
+      }
+      input {
+         font-size: toRem(24);
+         width: 100%;
+         color: #fff;
+         padding: 0 toRem(10);
+         background-color: transparent;
+         border: 1px solid transparent;
+         height: toRem(50);
+         border-bottom: 1px solid #fff;
+         &:focus {
+            outline: 1px solid #fff;
+         }
+         &.Error {
+            border: 1px solid #ff0000;
+            color: #ff0000;
+         }
+      }
+   }
+
+   &__place {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(15);
+   }
+
+   &__input {
+      resize: vertical;
+      width: 100%;
+      color: #fff;
+      padding: toRem(20);
+      background-color: transparent;
+      border-bottom: 1px solid #fff;
+      min-height: toRem(60);
+   }
+   textarea {
+      font-size: toRem(20);
+      &:focus {
+         outline: 1px solid #fff;
+      }
+   }
+
+   &__button {
+      background-color: #ffd000;
+      font-size: toRem(22);
+      padding: toRem(12) toRem(20);
+      border-radius: toRem(100);
+      color: #000;
+      transition: all 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: #fffbeb;
+         }
+      }
+   }
+
+   &__output {
+      width: 100%;
+      border: 1px solid #fff;
+      padding: toRem(20);
+      font-size: toRem(20);
+      letter-spacing: 2px;
+      line-height: 1.3;
+   }
+}
+
+.message {
+   background-color: #ffd000;
+   padding: toRem(10) toRem(16);
+   border-radius: toRem(100);
+   color: #000;
+   position: fixed;
+   left: 50%;
+   font-size: toRem(14);
+   top: 0;
+   transform: translateX(-50%);
+   z-index: 80;
+   animation: 1s ease-in infinite messageDown;
+   opacity: 0;
+   visibility: hidden;
+   animation-play-state: paused;
+   &.active {
+      animation-play-state: running;
+   }
+}
+
+@keyframes messageDown {
+   0% {
+      opacity: 0;
+      top: 0;
+      visibility: visible;
+   }
+
+   50% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+      top: toRem(100);
+   }
+}
