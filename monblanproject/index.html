@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- zxx -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <title>Monblanproject</title>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="wrapper">
+        <img src="img/design-vector.png" alt="background" class="image-background-top">
+        <img src="img/design-vector-bottom.png" alt="background" class="image-background-bottom">
+
+        <header class="header header--fixed">
+            <div class="header__container">
+                <img src="img/logo.svg" alt="Logo" class="header__logo">
+                <div class="header__content">
+                    <div class="header__hat">
+                        <h3 class="header__project-name">monblanproject</h3>
+                        <label class="header__label">Start on 17-02-2016</label>
+                    </div>
+                    <ul class="header__info">
+                        <li class="header__item-info">
+                            <span class="header__data">870</span>
+                            <p class="header__about-data">posts</p>
+                        </li>
+                        <li class="header__item-info">
+                            <span class="header__data">11,787</span>
+                            <p class="header__about-data">followers</p>
+                        </li>
+                        <li class="header__item-info">
+                            <span class="header__data">112</span>
+                            <p class="header__about-data">following</p>
+                        </li>
+                    </ul>
+                    <div class="header__date date">
+                        <h4 class="date__title">Date</h4>
+                        <div class="date__pickers">
+                            <label class="date__picker">
+                                <input type="text" placeholder="from" id="date-from" class="date__input">
+                                <button class="date__button icon-cross" id="close-date-from"></button>
+                                <button class="date__button icon-calendar" id="open-date-from"></button>
+                            </label>
+                            <label class="date__picker">
+                                <input type="text" placeholder="to" id="date-to" class="date__input">
+                                <button class="date__button icon-cross" id="close-date-to"></button>
+                                <button class="date__button icon-calendar" id="open-date-to"></button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="header__burger">
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <main class="page">
+            <div class="page__container">
+                <div class="page__view-control-panel view-control-panel">
+                    <button id="grid-button"
+                        class="view-control-panel__button view-control-panel__button--size icon-grid"></button>
+                    <button id="list-button" class="view-control-panel__button icon-list active"></button>
+                </div>
+                <ul class="page__project-list list-project" id="list-of-project">
+                    <!-- ! Цей список я динамічно відтворив через js (з вашого дозволу), хоч залишив оригінал закоментованим -->
+
+                    <!-- <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_1.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_1.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_2.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_2.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_3.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_3.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_4.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_4.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_5.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_5.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_6.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_6.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_7.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_7.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_8.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_8.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-project__item">
+                        <picture class='list-project__picture-wrapper'>
+                            <source srcset='img/content/img_9.jpg' type='image/jpg'>
+                            <img class='list-project__image' alt='Image' src='img/content/img_9.webp'>
+                        </picture>
+                        <div class="list-project__content">
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Today</h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">128</span>
+                                    <span class=" icon-comment">31</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title"><time datetime="2016-08-09">9-08-2016</time></h5>
+                                <div class="list-project__data">
+                                    <span class=" icon-heart">67</span>
+                                    <span class=" icon-comment">22</span>
+                                </div>
+                            </div>
+                            <div class="list-project__info-block">
+                                <h5 class="list-project__title">Image upload</h5>
+                                <p class="list-project__date"><time datetime="2016-04-11">11-04-2016</time></p>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+                <button class="page__upload" id="upload-more">Load more</button>
+            </div>
+
+        </main>
+</body>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<script src="js/script.js"></script>
+
+
+</html>

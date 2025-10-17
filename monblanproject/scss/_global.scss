@@ -1,0 +1,16 @@
+// _globals.scss
+@use "sass:math";
+@forward "_reset.scss";
+@forward "_fonts.scss";
+@forward "_functions.scss";
+
+$mainFont: "Roboto";
+$secondFont: "Montserrat";
+
+$mainColor: #000000;
+$mainBGColor: #fff;
+$accentColor: #3d8eda;
+$secondAccentColor: #929292;
+$thirdAccentColor: #5f5f5f;
+$fadeColor: #dedede;
+$secondBgColor: #f5f5f5;

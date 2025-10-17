@@ -1,0 +1,231 @@
+@use "sass:math";
+
+@use "_global.scss" as *;
+.header {
+   &--fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+   }
+   background-color: #ffffff86;
+   padding: toRem(6) 0 toRem(26) 0;
+   box-shadow: 0 4px 10px $fadeColor, inset 0 10px 15px $secondAccentColor;
+   transition: background-color 0.3s;
+   &.scrolled {
+      background-color: $mainBGColor;
+   }
+   &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $mainBGColor;
+      z-index: 90;
+      transition: transform 0.3s;
+      transform: translateX(100%);
+   }
+   .menu-open & {
+      &::before {
+         transform: translateX(0);
+      }
+   }
+   @media (max-width: toEm(600)) {
+      padding: toRem(6);
+   }
+   &__container {
+      display: flex;
+      align-items: center;
+      gap: toRem(70);
+      row-gap: toRem(20);
+      flex-wrap: wrap;
+      max-width: toRem(766);
+      justify-content: center;
+
+      @media (max-width: toEm(600)) {
+         justify-content: space-between;
+      }
+   }
+   &__logo {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      object-fit: cover;
+      max-width: toRem(138);
+      @media (max-width: toEm(797)) {
+         max-width: toRem(68);
+      }
+   }
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(16);
+      @media (max-width: toEm(600)) {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         padding: toRem(80) toRem(40) toRem(20);
+         background-color: $mainBGColor;
+         transform: translateX(100%);
+         overflow: auto;
+         transition: all 0.3s;
+         .menu-open & {
+            transform: translateX(0);
+         }
+      }
+   }
+
+   &__burger {
+      display: none;
+      @media (max-width: toEm(600)) {
+         display: block;
+         position: relative;
+         z-index: 92;
+         width: toRem(40);
+         height: toRem(26);
+         &::after,
+         &::before,
+         span {
+            content: "";
+            width: 100%;
+            position: absolute;
+            left: 0;
+            background-color: #000;
+            height: toRem(2);
+            transition: all 0.3s;
+         }
+         &::after {
+            bottom: 0;
+            .menu-open & {
+               bottom: 50%;
+               transform: translateY(50%) rotate(45deg);
+            }
+         }
+         &::before {
+            top: 0;
+            .menu-open & {
+               top: 50%;
+               transform: translateY(-50%) rotate(-45deg);
+            }
+         }
+         span {
+            top: 50%;
+            transform: translateY(-50%);
+            .menu-open & {
+               transform: scale(0);
+            }
+         }
+      }
+   }
+
+   &__hat {
+      display: flex;
+      align-items: center;
+      gap: toRem(16);
+      flex-wrap: wrap;
+   }
+
+   &__project-name {
+      font-family: $secondFont;
+      font-weight: 500;
+      font-size: toRem(24);
+   }
+
+   &__label {
+      font-weight: 400;
+      padding: toRem(6) toRem(12);
+      display: inline-block;
+      border-radius: 2px;
+      border: 1px solid $accentColor;
+      color: $accentColor;
+   }
+
+   &__info {
+      display: flex;
+      align-items: center;
+      gap: toRem(28);
+      row-gap: toRem(10);
+
+      flex-wrap: wrap;
+   }
+
+   &__item-info {
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+   }
+
+   &__data {
+      font-weight: 700;
+   }
+
+   &__about-data {
+      font-weight: 400;
+   }
+}
+
+.date {
+   display: flex;
+   align-items: center;
+   gap: toRem(11);
+   flex-wrap: wrap;
+   &__title {
+      font-weight: 400;
+      font-size: toRem(16);
+   }
+
+   &__pickers {
+      display: flex;
+      align-items: center;
+      gap: toRem(24);
+      flex-wrap: wrap;
+   }
+
+   &__picker {
+      max-width: toRem(162);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: toRem(24);
+      outline: 1px solid $secondAccentColor;
+      border-radius: 2px;
+      overflow: hidden;
+   }
+
+   &__input {
+      height: 100%;
+      width: 100%;
+      padding-left: toRem(8);
+      color: $thirdAccentColor;
+      font-weight: 400;
+      &::placeholder {
+         opacity: 1;
+      }
+   }
+
+   &__button {
+      aspect-ratio: 1 /1;
+      width: 100%;
+      max-width: toRem(24);
+      background-color: $fadeColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: toRem(16);
+      &:not(:last-child) {
+         border-right: 1px solid $secondAccentColor;
+      }
+
+      transition: all 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $secondAccentColor;
+         }
+      }
+   }
+}
