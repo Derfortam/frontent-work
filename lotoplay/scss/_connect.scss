@@ -1,0 +1,190 @@
+@use "./vars"as *;
+@use "./_functions"as *;
+
+
+
+.connect {
+    background: #121C22FF;
+    background: linear-gradient(-160deg, rgba(18, 28, 34, 1) 0%, rgba(18, 1, 7, 1) 50%, rgba(30, 17, 22, 1) 100%);
+    padding: toRem(40) 0;
+
+    &--margin {
+        scroll-margin-top: toRem(80);
+    }
+
+    @media (min-width:toEm(700)) {
+        padding: toRem(80) 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(15);
+
+    }
+
+    &__title {
+        text-align: center;
+        font-size: toRem(25);
+        font-weight: 600;
+        font-family: $secondFontFamily;
+
+        @media (min-width:toEm(700)) {
+
+            font-size: toRem(30);
+        }
+    }
+
+
+    &__sub-title {
+        text-align: center;
+
+        font-size: toRem(17);
+        font-weight: 400;
+        color: $secondTextColor;
+
+        @media (min-width:toEm(700)) {
+
+            font-size: toRem(20);
+        }
+    }
+
+    &__content {
+        display: flex;
+        gap: toRem(20);
+        justify-content: space-between;
+        flex-direction: column;
+
+        @media (min-width:toEm(810)) {
+            flex-direction: row;
+
+        }
+
+    }
+
+    &__location {
+        flex: 1 1 48%;
+        background-color: $tableBG;
+        border: 1px solid $tableAccent;
+        padding: toRem(20) toRem(15);
+        border-radius: toRem(12);
+        display: flex;
+        flex-direction: column;
+        gap: toRem(15);
+        transition: all 0.6s;
+        transform: translateX(50%);
+        opacity: 0;
+
+        .show & {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    &__name-location {
+        font-size: toRem(18);
+        font-family: $secondFontFamily;
+        font-weight: 600;
+
+        @media (min-width:toEm(700)) {
+            font-size: toRem(22);
+        }
+    }
+
+    &__map {
+        width: 100%;
+        min-height: toRem(300);
+        border-radius: toRem(8);
+    }
+}
+
+.form-connect {
+    flex: 1 1 48%;
+
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
+    // align-items: flex-start;
+
+    transition: all 0.6s;
+    transform: translateX(-50%);
+    opacity: 0;
+
+    .show & {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    &__fields {
+        display: flex;
+        gap: toRem(20);
+        row-gap: toRem(15);
+        flex-wrap: wrap;
+    }
+
+    &__label {
+        font-size: toRem(18);
+        font-weight: 400;
+        color: $secondTextColor;
+        display: flex;
+        flex-direction: column;
+        gap: toRem(8);
+
+
+        &--width {
+            flex: 1 1 100%;
+        }
+
+        flex: 1 1 100%;
+
+        @media (min-width:toEm(450)) {
+            flex: 1 1 45%;
+        }
+    }
+
+    &__input {
+        background-color: $tableBG;
+        border: 1px solid $tableAccent;
+        height: toRem(40);
+        padding: 0 toRem(15);
+        border-radius: toRem(8);
+
+        &::placeholder {
+            opacity: 1;
+            color: $tableAccent;
+        }
+    }
+
+    &__textarea {
+
+        background-color: $tableBG;
+        border: 1px solid $tableAccent;
+        // width: 100%;
+        padding: toRem(15);
+        border-radius: toRem(8);
+        resize: vertical;
+        min-height: toRem(100);
+    }
+
+    &__submit {
+        background-color: $thirdAccentColor;
+        font-family: $secondFontFamily;
+        border-radius: toRem(8);
+        padding: toRem(8) toRem(24);
+        font-size: toRem(17);
+        align-self: flex-start;
+        transition: all 0.3s;
+
+        @media (min-width:toEm(700)) {
+            padding: toRem(12) toRem(30);
+            font-size: toRem(20);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $thirdAccentColorHover;
+                transform: scale(1.1);
+            }
+        }
+    }
+}

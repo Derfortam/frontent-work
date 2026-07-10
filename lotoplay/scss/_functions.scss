@@ -1,0 +1,12 @@
+@use 'sass:math';
+
+
+@function toRem($s1, $s2: 16) {
+    $rez: math.div($s1, $s2) + rem;
+    @return $rez;
+}
+
+@function toEm($s1, $s2: 16) {
+    $rez: math.div($s1, $s2) + em;
+    @return $rez;
+}

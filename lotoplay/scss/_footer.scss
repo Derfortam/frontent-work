@@ -1,0 +1,99 @@
+@use "./vars"as *;
+@use "./_functions"as *;
+
+.footer {
+    background-color: $secondBgColor;
+    padding: toRem(30) 0;
+    border-top: 1px solid $tableAccent;
+    font-size: toRem(17);
+
+    @media (min-width:toEm(700)) {
+        padding: toRem(60) 0;
+        font-size: toRem(20);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(20);
+
+        @media (min-width:toEm(700)) {
+
+            gap: toRem(40);
+
+        }
+    }
+
+    &__main-info {
+        font-family: $secondFontFamily;
+        font-weight: 600;
+        color: $secondTextColor;
+        display: flex;
+        align-items: center;
+        gap: toRem(20);
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @media (min-width:toEm(700)) {
+            justify-content: space-between;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        gap: toRem(20);
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        @media (min-width:toEm(700)) {
+            flex-direction: row;
+        }
+    }
+
+    &__contact {
+        font-size: toRem(18);
+        transition: all 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $thirdAccentColor;
+            }
+        }
+    }
+
+
+
+    .social-media-list {
+        display: flex;
+        align-items: center;
+        gap: toRem(10);
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: toRem(10);
+
+            &:not(:last-child) {
+                &::after {
+                    content: '';
+                    width: toRem(5);
+                    height: toRem(5);
+                    background-color: $secondTextColor;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &__link {
+            transition: all 0.3s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $firstAccentColor;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

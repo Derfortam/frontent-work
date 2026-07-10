@@ -1,0 +1,133 @@
+@use "./vars"as *;
+@use "./_functions"as *;
+
+
+
+
+.schedule {
+    &--margin {
+        scroll-margin-top: toRem(80);
+    }
+
+    padding: toRem(40) 0;
+
+    @media (min-width:toEm(700)) {
+        padding: toRem(80) 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        transition: transform 0.5s, opacity 0.7s;
+        opacity: 0;
+        transform: translateY(50%);
+
+        .show & {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    &__content {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        border-radius: 0 0 toRem(12) toRem(12);
+        border: 1px solid $tableAccent;
+
+        @media (min-width:toEm(790)) {
+            width: 100%;
+            overflow: hidden;
+        }
+
+
+    }
+
+    &__title {
+        font-size: toRem(20);
+        font-family: $secondFontFamily;
+        font-weight: 600;
+        padding: toRem(18) toRem(14);
+        background-color: $tableMainBG;
+        display: inline-block;
+        width: 100%;
+        border-radius: toRem(12) toRem(12) 0 0;
+        border: 1px solid $tableAccent;
+        border-bottom: none;
+
+        @media (min-width:toEm(600)) {
+            font-size: toRem(30);
+        }
+    }
+
+    &__help {
+        font-size: toRem(13);
+        margin-bottom: toRem(10);
+        text-align: right;
+        opacity: 1;
+        transition: opacity 0.3s;
+
+        @media (min-width:toEm(600)) {
+            font-size: toRem(17);
+            opacity: 0;
+        }
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    // overflow: scroll;
+    background-color: $tableBG;
+    white-space: nowrap;
+    font-size: toRem(15);
+
+    @media (min-width:toEm(600)) {
+        font-size: toRem(18);
+    }
+
+    th,
+    td {
+        padding: toRem(18) toRem(14);
+    }
+
+    &__header {
+        background-color: $tableMainBG;
+
+        th {
+            text-align: left;
+            color: $secondTextColor;
+            border-bottom: 1px solid $tableAccent;
+
+        }
+    }
+
+    &__body {
+        tr {
+            &:not(:last-child) {
+                border-bottom: 1px solid $tableAccent;
+            }
+        }
+    }
+
+    &__ticket {
+        font-size: toRem(12);
+        background-color: $thirdAccentColor;
+        padding: toRem(8) toRem(15);
+        border-radius: toRem(8);
+        font-family: $secondFontFamily;
+        font-weight: 400;
+        transition: all 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $thirdAccentColorHover;
+                transform: scale(1.1);
+            }
+        }
+
+        @media (min-width:toEm(600)) {
+            font-size: toRem(16);
+        }
+    }
+}

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <title>Lotoplay by S.T.</title>
+  </head>
+  <body>
+    <div class="wrapper-preloader">
+      <div class="loader"></div>
+    </div>
+    <div class="wrapper">
+      <header class="header header--sticky">
+        <div class="header__container header__container--width">
+          <h2 class="header__logo">G&G</h2>
+          <nav class="header__menu menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#story" class="menu__link">Про гурт</a>
+              </li>
+              <li class="menu__item">
+                <a href="#schedule" class="menu__link">Концерти</a>
+              </li>
+              <li class="menu__item">
+                <a href="#members" class="menu__link">Галерея</a>
+              </li>
+              <li class="menu__item">
+                <a href="#connect" class="menu__link">Контакти</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__toggle">
+            <button
+              aria-label="menu button"
+              id="menu-burger"
+              class="header__button"
+            >
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="page">
+        <section id="hero" class="page__hero hero observer-animate">
+          <div
+            class="hero__blur-image"
+            style="background-image: url(img/hero-small.webp)"
+          >
+            <img
+              loading="lazy"
+              src="./img/hero.webp"
+              alt="Background Hero Image"
+              class="hero__background-image"
+            />
+          </div>
+          <div class="hero__container">
+            <h1 class="hero__title">Гурт "Грим та Грім"</h1>
+            <h3 class="hero__sub-title">
+              Справжній український рок, який гуркоче в серці
+            </h3>
+            <div class="hero__text">
+              <p>
+                "Грим та Грім" - це поєднання <em>потужних</em> гітарних рифів,
+                чесних текстів та вибухової енергії сцени. Ми граємо для тих,
+                хто ціннує живий звук, свободу та силу музики.
+              </p>
+              <p>
+                <em>Наші концерти</em> - це завжди контакт із залом, драйв та
+                емоції. Приєднуйся до нас на найближчих виступах та відчуй цей
+                саунд наживо!
+              </p>
+            </div>
+            <button class="hero__button">Замовити квиток</button>
+          </div>
+        </section>
+        <section
+          id="schedule"
+          class="page__schedule schedule schedule--margin observer-animate"
+        >
+          <div class="schedule__container">
+            <div class="schedule__help">Гортайте для перегляду ></div>
+            <h2 class="schedule__title">Найближчі концерти</h2>
+            <div class="schedule__content">
+              <table class="schedule__table table">
+                <thead class="table__header">
+                  <tr>
+                    <th>Місто / Заклад</th>
+                    <th>К-сть місць</th>
+                    <th>Дата та час</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody class="table__body">
+                  <tr>
+                    <td data-label="town">Київ - Docker-G Pub</td>
+                    <td data-label="places">250</td>
+                    <td data-label="time">25.10.2025, 19:00</td>
+                    <td data-label="ticket">
+                      <button class="table__ticket">Замовити квиток</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="town">Львів - !FESTrepublic</td>
+                    <td data-label="places">400</td>
+                    <td data-label="time">01.11.2025, 20:00</td>
+                    <td data-label="ticket">
+                      <button class="table__ticket">Замовити квиток</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="town">Одеса - Зелен театр</td>
+                    <td data-label="places">700</td>
+                    <td data-label="time">09.11.2025, 19:30</td>
+                    <td data-label="ticket">
+                      <button class="table__ticket">Замовити квиток</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="town">Харків -ArtZavod</td>
+                    <td data-label="places">500</td>
+                    <td data-label="time">16.11.2025, 19:00</td>
+                    <td data-label="ticket">
+                      <button class="table__ticket">Замовити квиток</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="members"
+          class="page__members members members--margin observer-animate"
+        >
+          <div class="members__container">
+            <h2 class="members__title">Учасники гурту</h2>
+            <ul class="members__content-list">
+              <li class="members__member">
+                <div
+                  class="members__blur-image"
+                  style="background-image: url(img/vic-small.webp)"
+                >
+                  <img
+                    loading="lazy"
+                    src="./img/vic.webp"
+                    alt="Vic"
+                    class="members__image"
+                  />
+                </div>
+                <h6 class="members__name">Вікторія - бас-гітара</h6>
+              </li>
+              <li class="members__member">
+                <div
+                  class="members__blur-image"
+                  style="background-image: url(img/tyler-small.webp)"
+                >
+                  <img
+                    loading="lazy"
+                    src="./img/tyler.webp"
+                    alt="Vic"
+                    class="members__image"
+                  />
+                </div>
+                <h6 class="members__name">Тайлер - вокал</h6>
+              </li>
+              <li class="members__member">
+                <div
+                  class="members__blur-image"
+                  style="background-image: url(img/josh-small.webp)"
+                >
+                  <img
+                    loading="lazy"
+                    src="./img/josh.webp"
+                    alt="Vic"
+                    class="members__image"
+                  />
+                </div>
+                <h6 class="members__name">Джош - ударні</h6>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id="story"
+          class="page__story story story--margin observer-animate"
+        >
+          <div class="story__container">
+            <h2 class="story__title">Наша історія</h2>
+            <div class="story__content">
+              <div
+                class="story__blur-image"
+                style="background-image: url(img/background-small.webp)"
+              >
+                <img
+                  loading="lazy"
+                  src="./img/background.webp"
+                  alt="scene"
+                  class="story__image"
+                />
+              </div>
+              <p>
+                "Грим та Грім" народився з бажання створювати музику, яка
+                відчувається серцем. Ми почали свій шлях у маленькій студії в
+                центрі Києва, де кожен акорд, кожне слово було наповнене
+                емоціями та переживаннями. Це було місце, де народжувались наші
+                перші пісні, де ми вчились грати разом як єдиний організм.
+              </p>
+              <p>
+                За роки нашої діяльності ми виступили на десятках сцен, від
+                невеликих клубів до великих фестивалів. Наша музика - це
+                поєднання традиційного року з сучасними елементами, що робить її
+                унікальною та впізнаваною. Ми не боїмось експериментувати з
+                звуком, додаючи електронні елементи або народні інструменти.
+              </p>
+              <p>
+                Кожен наш виступ - це не просто концерт, а справжня подія, де ми
+                ділимося своєю енергією з глядачами та створюємо неповторну
+                атмосферу. Ми віримо, що музика має силу об'єднувати людей,
+                створювати спільноти та надихати на зміни.
+              </p>
+              <p>
+                Наш колектив складається з досвідчених музикантів, кожен з яких
+                привносить свій унікальний стиль та бачення. Максим створює
+                неймовірні гітарні рифи, Олена зачаровує своїм вокалом, а Тарас
+                тримає ритм, який змушує серця битися в унісон з музикою.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="connect"
+          class="page__connect connect connect--margin observer-animate"
+        >
+          <div class="connect__container">
+            <h2 class="connect__title">Зв'яжися із нами</h2>
+            <h4 class="connect__sub-title">
+              Хочеш замовити виступ або маєш питання? пиши!
+            </h4>
+            <div class="connect__content">
+              <form action="#" method="post" class="connect__form form-connect">
+                <div class="form-connect__fields">
+                  <label class="form-connect__label"
+                    >Ім'я
+                    <input
+                      type="text"
+                      required
+                      name="name"
+                      minlength="2"
+                      maxlength="50"
+                      pattern="^[A-Za-zА-Яа-яІіЇїЄєҐґ' -]+$"
+                      placeholder="Ваше ім'я..."
+                      oninvalid="this.setCustomValidity('Введіть ваше ім\'я')"
+                      oninput="this.setCustomValidity('')"
+                      class="form-connect__input"
+                  /></label>
+                  <label class="form-connect__label"
+                    >Email
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Ваше Email"
+                      class="form-connect__input"
+                      required
+                      oninvalid="
+                        this.setCustomValidity(
+                          'Введіть коректну електронну пошту',
+                        )
+                      "
+                      oninput="this.setCustomValidity('')"
+                      maxlength="250"
+                  /></label>
+                  <label class="form-connect__label form-connect__label--width"
+                    >Повідомлення
+                    <textarea
+                      placeholder="Розкажи про свої ідеї"
+                      name="message"
+                      class="form-connect__textarea"
+                    ></textarea>
+                  </label>
+                </div>
+                <button type="submit" class="form-connect__submit">
+                  Відправити
+                </button>
+              </form>
+              <div class="connect__location">
+                <h5 class="connect__name-location">Наше місцезнаходження</h5>
+                <iframe
+                  title="map"
+                  class="connect__map"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3112.8767796503694!2d30.53216073058157!3d50.4021834965568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1783701101772!5m2!1suk!2sua"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__main-info">
+            <h6 class="footer__copurights">
+              © 2025 "Грим та Грім". Всі права захищені.
+            </h6>
+            <ul class="footer__social-media social-media-list">
+              <li class="social-media-list__item">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  class="social-media-list__link"
+                  >Instagram</a
+                >
+              </li>
+              <li class="social-media-list__item">
+                <a
+                  href="https://www.youtube.com/"
+                  target="_blank"
+                  class="social-media-list__link"
+                  >YouTube</a
+                >
+              </li>
+              <li class="social-media-list__item">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="social-media-list__link"
+                  >Facebook</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__contacts">
+            <a href="mailto:booking@lotoplay" class="footer__contact"
+              >booking@lotoplay</a
+            ><a href="tel:+380991234567" class="footer__contact"
+              >+38 (099) 123-45-67</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

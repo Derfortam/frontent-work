@@ -1,0 +1,168 @@
+@use "./vars"as *;
+@use "./_functions"as *;
+
+.hero {
+    flex-grow: 1;
+    height: 100svh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+
+    &__blur-image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+
+        img {
+            opacity: 0;
+        }
+
+        &.loaded {
+            img {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.4s;
+        transform: scale(3);
+
+        .show & {
+            transform: scale(1);
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: toRem(25);
+
+        padding-top: toRem(20);
+        padding-bottom: toRem(20);
+
+        &> :last-child {
+            margin-bottom: 0;
+        }
+
+        transition: all 0.7s;
+        opacity: 0;
+        transform: translateX(-600%);
+
+        .show & {
+            transform: translateX(0%);
+            opacity: 1;
+
+        }
+
+    }
+
+    &__title {
+        font-size: toRem(25);
+
+        @media (min-width:toEm(600)) {
+            font-size: toRem(45);
+            font-family: $secondFontFamily, sans-serif;
+            font-weight: 600;
+        }
+    }
+
+    &__sub-title {
+        font-size: toRem(20);
+        margin-bottom: 0;
+
+        @media (min-width:toEm(600)) {
+            font-size: toRem(25);
+            font-family: $secondFontFamily, sans-serif;
+            font-weight: 400;
+            color: $secondTextColor;
+            margin-bottom: toRem(30);
+
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(20);
+        font-size: toRem(16);
+        margin-bottom: 0;
+
+        em {
+            color: $firstAccentColor;
+            font-style: normal;
+            font-weight: 600;
+
+
+        }
+
+        @media (min-width:toEm(600)) {
+            font-size: toRem(18);
+            margin-bottom: toRem(30);
+
+        }
+    }
+
+    &__button {
+        color: $thirdTextColor;
+        background-color: $secondAccentColor;
+        font-size: toRem(16);
+        padding: toRem(10) toRem(20);
+        border-radius: toRem(12);
+        font-family: $secondFontFamily;
+        box-shadow: 10px 5px 20px rgba($secondAccentColor, 0.5);
+        transition: all 0.3s;
+
+        animation: button-anim 2s ease-in-out infinite;
+
+        @media (min-width:toEm(600)) {
+            padding: toRem(15) toRem(30);
+            font-size: toRem(22);
+
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $secondAccentColorHover;
+                box-shadow: 10px 10px 20px rgba($secondAccentColor, 0.5);
+
+            }
+        }
+    }
+}
+
+@keyframes button-anim {
+    0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 10px 5px 20px rgba($secondAccentColor, 0.5);
+
+    }
+
+    50% {
+        transform: translateY(20%) scale(1.05);
+        box-shadow: 1px 5px 40px rgba($secondAccentColor, 0.5);
+
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 10px 5px 20px rgba($secondAccentColor, 0.5);
+
+
+    }
+}
